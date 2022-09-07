@@ -1,2 +1,2 @@
-export { default } from '.'
-export * from '.'
+export { default } from './Navbar'
+export * from './Navbar'
