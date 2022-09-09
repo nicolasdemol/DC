@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import React, { forwardRef } from 'react'
 import s from './Button.module.css'
-import { LoadingDots } from '@components/ui'
+import { LoadingDots } from '../LoadingDots'
 
 const Button = forwardRef((props, buttonRef) => {
   Button.displayName = 'Button'
@@ -19,8 +19,6 @@ const Button = forwardRef((props, buttonRef) => {
     ...rest
   } = props
 
-  const ref = useRef < typeof Component > null
-
   const rootClassName = cn(
     s.root,
     {
@@ -37,7 +35,7 @@ const Button = forwardRef((props, buttonRef) => {
     <Component
       aria-pressed={active}
       data-variant={variant}
-      ref={mergeRefs([ref, buttonRef])}
+      ref={buttonRef}
       className={rootClassName}
       disabled={disabled}
       style={{
