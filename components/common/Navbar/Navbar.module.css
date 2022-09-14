@@ -1,0 +1,33 @@
+.root {
+  @apply sticky top-0 bg-primary z-40 transition-all duration-150;
+  min-height: 74px;
+}
+
+.nav {
+  @apply relative flex flex-row justify-between items-center py-4 md:py-4;
+}
+
+.navMenu {
+  @apply hidden lg:flex space-x-4 items-center;
+}
+
+.link {
+  @apply inline-flex items-center text-lg border-2 border-transparent rounded-sm px-2 py-2
+    transition ease-in-out duration-75 cursor-pointer font-semibold;
+}
+
+.link:hover {
+  @apply border-accent-9;
+}
+
+.link:focus {
+  @apply outline-none text-accent-3;
+}
+
+.logo {
+  @apply cursor-pointer text-5xl font-semibold transform duration-100 ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

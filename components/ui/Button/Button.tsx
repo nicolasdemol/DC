@@ -1,9 +1,27 @@
 import cn from 'clsx'
-import React, { forwardRef } from 'react'
+import React, {
+  forwardRef,
+  ButtonHTMLAttributes,
+  JSXElementConstructor,
+  useRef,
+} from 'react'
+import { mergeRefs } from 'react-merge-refs'
 import s from './Button.module.css'
-import { LoadingDots } from '../LoadingDots'
+import { LoadingDots } from '@components/ui'
 
-const Button = forwardRef((props, buttonRef) => {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: string
+  className?: string
+  variant?: 'flat' | 'slim' | 'slide' | 'naked'
+  active?: boolean
+  type?: 'submit' | 'reset' | 'button'
+  Component?: string | JSXElementConstructor<any>
+  width?: string | number
+  loading?: boolean
+  disabled?: boolean
+}
+
+const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   Button.displayName = 'Button'
 
   const {
@@ -19,10 +37,12 @@ const Button = forwardRef((props, buttonRef) => {
     ...rest
   } = props
 
+  const ref = useRef<typeof Component>(null)
+
   const rootClassName = cn(
     s.root,
     {
-      [s.ghost]: variant === 'ghost',
+      [s.slide]: variant === 'slide',
       [s.slim]: variant === 'slim',
       [s.naked]: variant === 'naked',
       [s.loading]: loading,
@@ -35,7 +55,7 @@ const Button = forwardRef((props, buttonRef) => {
     <Component
       aria-pressed={active}
       data-variant={variant}
-      ref={buttonRef}
+      ref={mergeRefs([ref, buttonRef])}
       className={rootClassName}
       disabled={disabled}
       style={{

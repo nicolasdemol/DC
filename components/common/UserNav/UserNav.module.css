@@ -1,0 +1,7 @@
+.root {
+  @apply items-center;
+}
+
+.list {
+  @apply space-x-4 flex flex-row items-center justify-items-end h-full;
+}

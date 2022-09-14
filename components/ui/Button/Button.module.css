@@ -1,16 +1,14 @@
 .root {
-  @apply relative bg-accent-0 text-accent-0 cursor-pointer z-10
+  @apply bg-accent-9 text-accent-0 cursor-pointer 
     px-9 py-3 transition ease-in-out duration-150
-    shadow-md text-center justify-center capitalize rounded-sm
-    border border-accent-9 items-center font-semibold
-    tracking-wide before:transition-all before:ease-in-out 
-    before:duration-300 before:content-[''] before:bg-accent-9 
-    before:h-full before:w-full before:top-0 before:left-0 before:absolute before:-z-10;
+    shadow-md text-center justify-center rounded-sm
+    border-2 border-accent-9 items-center font-semibold
+    tracking-wide text-lg;
   max-height: 64px;
 }
 
 .root:hover {
-  @apply text-accent-9 before:h-0;
+  @apply bg-accent-0 text-accent-9;
 }
 
 .root:focus {
@@ -26,24 +24,21 @@
 }
 
 .slim {
-  @apply py-2 transform-none normal-case;
+  @apply px-4 py-2 transform-none normal-case;
 }
 
-.ghost {
-  @apply border border-accent-2 bg-accent-0 text-accent-9 text-sm;
+.slide {
+  @apply relative bg-accent-0 overflow-hidden z-20 after:transition-all after:ease-in-out 
+  after:duration-300 after:content-[''] after:bg-accent-9 after:absolute
+  after:h-full after:w-full after:top-0 after:left-0 after:-z-10;
 }
 
-.ghost:hover {
-  @apply border-accent-9 bg-accent-9 text-accent-0;
+.slide:hover {
+  @apply after:-translate-y-full;
 }
 
 .naked {
-  @apply bg-transparent font-semibold border-none shadow-none outline-none py-0 px-0;
-}
-
-.naked:hover,
-.naked:focus {
-  @apply bg-transparent border-none;
+  @apply bg-accent-0 border-none text-accent-9;
 }
 
 .disabled,
