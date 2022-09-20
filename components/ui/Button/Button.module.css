@@ -20,7 +20,7 @@
 }
 
 .loading {
-  @apply bg-accent-1 text-accent-3 border-accent-2 cursor-not-allowed;
+  @apply bg-accent-9 text-accent-9 border-accent-9 cursor-not-allowed;
 }
 
 .slim {
@@ -38,7 +38,7 @@
 }
 
 .naked {
-  @apply bg-accent-0 border-none text-accent-9;
+  @apply bg-accent-0 border-2 text-accent-9;
 }
 
 .disabled,

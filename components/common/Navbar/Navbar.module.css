@@ -12,7 +12,7 @@
 }
 
 .link {
-  @apply inline-flex items-center text-lg border-2 border-transparent rounded-sm px-2 py-2
+  @apply inline-flex items-center text-lg border-2 border-transparent rounded-sm px-1
     transition ease-in-out duration-75 cursor-pointer font-semibold;
 }
 
@@ -21,11 +21,11 @@
 }
 
 .link:focus {
-  @apply outline-none text-accent-3;
+  @apply outline-none;
 }
 
 .logo {
-  @apply cursor-pointer text-5xl font-semibold transform duration-100 ease-in-out;
+  @apply cursor-pointer transform duration-100 ease-in-out;
 
   &:hover {
     transform: scale(1.05);

@@ -3,12 +3,9 @@
 }
 
 .input {
-  @apply bg-transparent px-2 py-2 appearance-none font-medium transition duration-150 ease-in-out pr-10;
+  @apply bg-transparent px-3 py-2 appearance-none font-medium transition duration-150 ease-in-out pr-10;
 }
 
-.input::placeholder {
-  @apply text-accent-2;
-}
 
 .input:focus {
   @apply outline-none shadow-outline-normal;

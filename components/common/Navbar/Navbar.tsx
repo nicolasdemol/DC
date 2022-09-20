@@ -28,22 +28,17 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
             <a className={s.link}>Équipe</a>
           </Link>
           <Link href="/search">
-            <a className={s.link}>Service</a>
+            <a className={s.link}>Services</a>
           </Link>
           <Link href="/search">
             <a className={s.link}>Expertise</a>
           </Link>
-          <Link href="/search">
+          <Link href="/contact">
             <a className={s.link}>Contact</a>
           </Link>
-          {links?.map((l) => (
-            <Link href={l.href} key={l.href}>
-              <a className={s.link}>{l.label}</a>
-            </Link>
-          ))}
         </nav>
         <SearchBar className="hidden lg:block" />
-        <UserNav className="hidden lg:block" />
+        <UserNav />
       </div>
     </Container>
   </NavbarRoot>

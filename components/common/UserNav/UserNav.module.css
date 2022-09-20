@@ -1,7 +1,7 @@
 .root {
-  @apply items-center;
+  @apply flex items-center;
 }
 
-.list {
-  @apply space-x-4 flex flex-row items-center justify-items-end h-full;
+.avatarButton {
+  @apply flex justify-center rounded-full;
 }

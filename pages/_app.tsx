@@ -2,6 +2,7 @@ import '@assets/main.css'
 
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
+import { ManagedUIContext } from '@components/ui/context'
 
 interface NoopProps {
   children: any
@@ -18,9 +19,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Layout pageProps={pageProps}>
-        <Component {...pageProps} />
-      </Layout>
+      <ManagedUIContext>
+        <Layout pageProps={pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </ManagedUIContext>
     </>
   )
 }
