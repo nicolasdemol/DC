@@ -24,13 +24,15 @@ const UserNav: React.FC<{
     <nav className={cn(s.root, className)}>
       <Dropdown>
         <DropdownTrigger>
-          <button
-            aria-label="Menu"
-            className={s.avatarButton}
-            onClick={() => (user ? null : openModal())}
-          >
-            <Avatar />
-          </button>
+          {user ? (
+            <div aria-label="Menu" className={s.avatarButton}>
+              <Avatar />
+            </div>
+          ) : (
+            <Button variant="slim" onClick={openModal}>
+              Connexion
+            </Button>
+          )}
         </DropdownTrigger>
         <CustomerMenuContent />
       </Dropdown>

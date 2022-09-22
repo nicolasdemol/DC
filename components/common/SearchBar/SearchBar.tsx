@@ -57,4 +57,4 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   )
 }
 
-export default memo(Searchbar)
+export default Searchbar

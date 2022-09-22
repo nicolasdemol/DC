@@ -1,6 +1,6 @@
 import { FC, useRef, useEffect, useCallback } from 'react'
 import s from './Modal.module.css'
-import { IoClose } from 'react-icons/io5'
+import { IoClose as Close } from 'react-icons/io5'
 import {
   disableBodyScroll,
   clearAllBodyScrollLocks,
@@ -49,7 +49,7 @@ const Modal: FC<ModalProps> = ({ children, onClose }) => {
           aria-label="Close panel"
           className={s.close}
         >
-          <IoClose className="h-6 w-6" />
+          <Close className="h-8 w-8" />
         </button>
         {children}
       </div>

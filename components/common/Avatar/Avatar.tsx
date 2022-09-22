@@ -15,9 +15,7 @@ const Avatar: FC<Props> = ({}) => {
       ref={ref}
       style={{ backgroundImage: userAvatar }}
       className="inline-block h-10 w-10 rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition-colors ease-linear"
-    >
-      {/* Add an image - We're generating a gradient as placeholder  <img></img> */}
-    </div>
+    ></div>
   )
 }
 

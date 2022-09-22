@@ -62,12 +62,7 @@ const SignInView: FC<Props> = () => {
         />
 
         <div className="pt-2 w-full flex flex-col">
-          <Button
-            variant="slide"
-            type="submit"
-            loading={loading}
-            disabled={disabled}
-          >
+          <Button type="submit" loading={loading} disabled={disabled}>
             Se connecter
           </Button>
         </div>

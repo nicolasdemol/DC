@@ -50,7 +50,7 @@ const Checkbox: React.FC<CheckboxProps> = forwardRef((props, checkboxRef) => {
         type="checkbox"
         {...rest}
       />
-      {check ? <IoCheckmark size={28} className="mx-1" /> : ''}
+      {check ? <IoCheckmark size={48} className="mr-1" /> : ''}
       {label}
     </label>
   )

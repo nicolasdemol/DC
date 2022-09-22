@@ -18,11 +18,6 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
   <NavbarRoot>
     <Container clean className="mx-auto max-w-8xl px-6">
       <div className={s.nav}>
-        <Link href="/">
-          <a className={s.logo} aria-label="Logo">
-            <Logo />
-          </a>
-        </Link>
         <nav className={s.navMenu}>
           <Link href="/search">
             <a className={s.link}>Équipe</a>
@@ -30,15 +25,19 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
           <Link href="/search">
             <a className={s.link}>Services</a>
           </Link>
-          <Link href="/search">
-            <a className={s.link}>Expertise</a>
-          </Link>
           <Link href="/contact">
             <a className={s.link}>Contact</a>
           </Link>
         </nav>
-        <SearchBar className="hidden lg:block" />
-        <UserNav />
+        <Link href="/">
+          <a className={s.logo} aria-label="Logo">
+            <Logo />
+          </a>
+        </Link>
+        <div className={s.user}>
+          <SearchBar className="hidden lg:block" />
+          <UserNav />
+        </div>
       </div>
     </Container>
   </NavbarRoot>

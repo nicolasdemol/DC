@@ -1,11 +1,8 @@
 .root {
-  @apply flex bg-accent-0 text-accent-9 cursor-pointer 
-      px-8 py-6 transition ease-in-out duration-150
-      shadow-md text-center justify-center rounded-sm
-      border-2 border-accent-9 items-center font-semibold
-      tracking-wide text-lg;
-  max-height: 64px;
-
+  @apply relative flex bg-accent-0 text-accent-9 cursor-pointer tracking-wide
+      shadow-md text-center justify-center rounded-xl
+      border-2 border-accent-9 items-center font-medium text-2xl;
+  min-height: 64px;
   input[type='checkbox'] {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);

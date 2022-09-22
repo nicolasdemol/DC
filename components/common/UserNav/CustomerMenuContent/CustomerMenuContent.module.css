@@ -7,12 +7,10 @@
   transition: none;
 }
 
-@media screen(lg) {
-  .root {
-    @apply static;
-    min-width: inherit;
-    height: inherit;
-  }
+.root {
+  @apply static;
+  min-width: inherit;
+  height: inherit;
 }
 
 .link {

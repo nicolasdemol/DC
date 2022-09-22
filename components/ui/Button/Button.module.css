@@ -1,7 +1,7 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer 
     px-9 py-3 transition ease-in-out duration-150
-    shadow-md text-center justify-center rounded-sm
+    shadow-md text-center justify-center rounded-xl
     border-2 border-accent-9 items-center font-semibold
     tracking-wide text-lg;
   max-height: 64px;

@@ -1,14 +1,13 @@
 .root {
-  @apply relative text-lg bg-accent-0 transition-colors duration-150 border-2 border-accent-9 rounded-sm;
+  @apply relative text-xl bg-accent-0 transition-colors duration-150 border-2 border-accent-9 rounded-full;
 }
 
 .input {
-  @apply bg-transparent px-3 py-2 appearance-none font-medium transition duration-150 ease-in-out pr-10;
+  @apply bg-transparent w-60 pl-4 py-2 appearance-none font-medium transition duration-150 ease-in-out pr-10 rounded-full;
 }
 
-
-.input:focus {
-  @apply outline-none shadow-outline-normal;
+.input::placeholder {
+  @apply text-accent-4
 }
 
 .iconContainer {

@@ -1,0 +1,49 @@
+.root {
+  @apply relative py-24;
+}
+
+.video {
+  @apply fixed;
+  width: 400px;
+  height: 400px;
+  left: -14%;
+  top: -25%;
+  clip-path: circle(37%);
+}
+
+.heading {
+  @apply text-3xl font-extrabold;
+}
+
+.list {
+  @apply grid grid-cols-1 gap-4;
+}
+
+.item {
+  @apply flex items-center justify-center z-10;
+}
+
+.title {
+  @apply font-extrabold text-7xl transition duration-300 text-transparent;
+  font-family: 'Helvetica';
+  -webkit-text-stroke: 2px var(--accent-9);
+}
+
+.title:hover {
+  @apply text-accent-9 scale-105;
+}
+
+@screen md {
+  .list {
+    @apply grid-cols-3 gap-0;
+  }
+}
+
+@screen lg {
+  .root {
+    @apply py-64;
+  }
+  .title {
+    @apply text-8xl;
+  }
+}

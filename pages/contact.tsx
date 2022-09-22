@@ -10,12 +10,12 @@ export default function Contact() {
     },
   })
   return (
-    <Container className="mt-4 mb-10 sm:mt-10">
+    <Container className="mt-4 mb-10 md:mt-10">
       <Text className="text-center" variant="heading">
         Que voulez-vous faire ?
       </Text>
       <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <Grid className="mt-8" variant="filled" layout="normal">
+        <Grid className="mt-8 md:mt-16" variant="filled" layout="normal">
           <Checkbox
             {...register('checkbox')}
             value="application"
@@ -47,14 +47,14 @@ export default function Contact() {
             label="Intelligence Artificielle"
           />
         </Grid>
-        <div className="mt-8 mx-auto grid gap-4 lg:grid-cols-2 lg:w-2/3">
+        <div className="mt-8 mx-auto grid gap-4 lg:grid-cols-2 lg:w-1/2">
           <Input
             {...register('email', { required: true })}
             label="email"
             placeholder="Email"
           />
           <Button type="submit" variant="slide">
-            Envoyer la requête
+            Envoyer
           </Button>
         </div>
       </form>
