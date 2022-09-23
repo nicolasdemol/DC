@@ -1,6 +1,6 @@
 import { FC, memo, useEffect } from 'react'
 import cn from 'clsx'
-import s from './Searchbar.module.css'
+import s from './SearchBar.module.css'
 import { useRouter } from 'next/router'
 
 interface Props {
@@ -57,4 +57,4 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   )
 }
 
-export default Searchbar
+export default memo(Searchbar)

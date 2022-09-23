@@ -7,7 +7,7 @@
 }
 
 .input::placeholder {
-  @apply text-accent-4
+  @apply text-accent-9
 }
 
 .iconContainer {
