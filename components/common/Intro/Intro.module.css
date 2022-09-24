@@ -1,30 +1,34 @@
 .root {
-  @apply relative py-24;
+  @apply py-20;
+}
+
+.list {
+  @apply grid grid-cols-1 gap-12;
+}
+.circle {
+  @apply h-full w-full overflow-hidden;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .video {
-  @apply fixed;
-  width: 400px;
-  height: 400px;
-  left: -14%;
-  top: -25%;
-  clip-path: circle(37%);
+  @apply w-full h-full scale-150;
 }
 
 .heading {
   @apply text-3xl font-extrabold;
 }
 
-.list {
-  @apply grid grid-cols-1 gap-4;
-}
-
 .item {
-  @apply flex items-center justify-center z-10;
+  @apply flex items-center justify-center;
 }
 
 .title {
-  @apply font-extrabold text-7xl transition duration-300 text-transparent;
+  @apply font-extrabold text-7xl transition duration-300 text-transparent z-10;
   font-family: 'Helvetica';
   -webkit-text-stroke: 2px var(--accent-9);
 }

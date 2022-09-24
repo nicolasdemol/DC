@@ -47,7 +47,7 @@ export default function Contact() {
             label="Intelligence Artificielle"
           />
         </Grid>
-        <div className="mt-8 mx-auto grid gap-4 lg:grid-cols-2 lg:w-1/2">
+        <div className="mt-20 mx-auto grid gap-4 lg:grid-cols-2 lg:w-1/2">
           <Input
             {...register('email', { required: true })}
             label="email"

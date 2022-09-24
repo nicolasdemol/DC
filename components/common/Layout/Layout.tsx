@@ -6,6 +6,7 @@ import { useUI } from '@components/ui/context'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
 
 import SignInView from '@components/auth/SignInView'
+import Head from 'next/head'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -17,7 +18,9 @@ const dynamicProps = {
   loading: Loading,
 }
 
-const SignUpView = dynamic(() => import('@components/auth/SignUpView'))
+const SignUpView = dynamic(() => import('@components/auth/SignUpView'), {
+  ...dynamicProps,
+})
 
 const FeatureBar = dynamic(() => import('@components/common/FeatureBar'), {
   ...dynamicProps,
@@ -51,6 +54,9 @@ const Layout: React.FC<Props> = ({ children }) => {
   const navBarlinks = {}
   return (
     <>
+      <Head>
+        <title>D&C</title>
+      </Head>
       <Navbar />
       <main className="fit">{children}</main>
       <ModalUI />

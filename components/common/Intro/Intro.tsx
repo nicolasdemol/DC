@@ -1,5 +1,13 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, {
+  FC,
+  useState,
+  useRef,
+  forwardRef,
+  JSXElementConstructor,
+} from 'react'
 import cn from 'clsx'
+import { motion } from 'framer-motion'
+import { mergeRefs } from 'react-merge-refs'
 import { useMousePosition } from '@lib/hooks/useMousePosition'
 import s from './Intro.module.css'
 import { Container, Text } from '@components/ui'
@@ -7,71 +15,92 @@ import Link from 'next/link'
 
 const ITEMS = [
   {
-    id: 0,
-    name: 'website',
+    id: 'website',
     title: 'SiteWeb',
     href: '/website',
   },
   {
-    id: 1,
-    name: 'app',
+    id: 'app',
     title: 'App',
     href: '/app',
   },
   {
-    id: 2,
-    name: 'design',
+    id: 'design',
     title: 'Design',
     href: '/design',
   },
 ]
 
 const Intro: FC = () => {
-  const [video, setVideo] = useState(false)
-  const position = useMousePosition()
-  const handleEvent = (e) => {
-    setVideo(e)
+  const [video, setVideo] = useState('')
+  const pos = useMousePosition()
+
+  const variants = {
+    hidden: { opacity: 0, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
+    default: { opacity: 1, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
   }
 
-  const styles = {
-    transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-  }
   return (
-    <div className="bg-accent-0 relative">
+    <div className="bg-accent-0">
       <Container>
-        <div className={s.root}>
-          {video ? (
-            <video
-              style={styles}
-              className={cn(s.video)}
-              src={`./videos/${video}.mp4`}
-              preload="auto"
-              autoPlay
-              muted
-              loop
-            ></video>
-          ) : (
-            ''
-          )}
-          <div className={s.list}>
-            {ITEMS.map((item) => (
+        <div id="intro" className={s.root}>
+          <div id="list" className={s.list}>
+            {ITEMS.map(({ id, title, href }) => (
               <div
-                id={item.name}
-                key={item.id}
+                key={id}
                 className={s.item}
-                onMouseEnter={() => handleEvent(item.name)}
-                onMouseLeave={() => handleEvent(false)}
+                onMouseEnter={() => setVideo(id)}
+                onMouseLeave={() => setVideo('')}
               >
-                <Link href={item.href}>
-                  <a className={s.title}>{item.title}</a>
+                <Link href={href}>
+                  <a className={s.title}>{title}</a>
                 </Link>
               </div>
             ))}
           </div>
+          <motion.div
+            className={s.circle}
+            variants={variants}
+            animate={video ? 'default' : 'hidden'}
+          >
+            {video ? <Video id={video} /> : ''}
+          </motion.div>
         </div>
       </Container>
     </div>
   )
 }
+
+interface VideoProps {
+  id: string
+  children?: any
+  className?: string
+  style?: any
+  Component?: string | JSXElementConstructor<any>
+  innerRef?: any
+}
+
+const Video: FC<VideoProps> = forwardRef((props, videoRef) => {
+  Video.displayName = 'Video'
+  const { id, className, children, style, Component = 'video', ...rest } = props
+
+  const ref = useRef<typeof Component>(null)
+  return (
+    <Component
+      id={id}
+      className={cn(s.video, className)}
+      style={style}
+      ref={mergeRefs([ref, videoRef])}
+      src={`./videos/${id}.mp4`}
+      preload="auto"
+      autoPlay
+      muted
+      loop
+      {...rest}
+    >
+      {children}
+    </Component>
+  )
+})
 
 export default Intro
