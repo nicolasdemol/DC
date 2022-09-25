@@ -93,7 +93,7 @@ const Video: FC<VideoProps> = forwardRef((props, videoRef) => {
       id={id}
       className={cn(s.video, className)}
       ref={mergeRefs([ref, videoRef])}
-      src={`/api/videos?videoId=${id}`}
+      src={`./videos/${id}.mp4`}
       preload="auto"
       autoPlay
       muted
