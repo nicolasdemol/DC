@@ -36,8 +36,12 @@ const Intro: FC = () => {
   const pos = useMousePosition()
 
   const variants = {
-    hidden: { opacity: 0, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
-    default: { opacity: 1, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
+    active: {
+      opacity: 1,
+      x: pos.x - 300 / 2,
+      y: pos.y - 300 / 2,
+    },
+    inactive: { opacity: 0, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
   }
 
   return (
@@ -61,7 +65,7 @@ const Intro: FC = () => {
           <motion.div
             className={s.circle}
             variants={variants}
-            animate={video ? 'default' : 'hidden'}
+            animate={video ? 'active' : 'inactive'}
           >
             {video ? <Video id={video} /> : ''}
           </motion.div>
@@ -75,23 +79,21 @@ interface VideoProps {
   id: string
   children?: any
   className?: string
-  style?: any
   Component?: string | JSXElementConstructor<any>
   innerRef?: any
 }
 
 const Video: FC<VideoProps> = forwardRef((props, videoRef) => {
   Video.displayName = 'Video'
-  const { id, className, children, style, Component = 'video', ...rest } = props
+  const { id, className, children, Component = 'video', ...rest } = props
 
   const ref = useRef<typeof Component>(null)
   return (
     <Component
       id={id}
       className={cn(s.video, className)}
-      style={style}
       ref={mergeRefs([ref, videoRef])}
-      src={`./videos/${id}.mp4`}
+      src={`/api/videos?videoId=${id}`}
       preload="auto"
       autoPlay
       muted

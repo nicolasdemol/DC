@@ -14,15 +14,11 @@ const LINKS = [
     name: 'Mes Commandes',
     href: '/orders',
   },
-  {
-    name: 'Mon Profil',
-    href: '/profile',
-  },
 ]
 
 export default function CustomerMenuContent() {
   const router = useRouter()
-  const { signout } = useAuth()
+  const { signout, user } = useAuth()
   const { pathname } = useRouter()
   const { theme, setTheme } = useTheme()
 
@@ -38,6 +34,13 @@ export default function CustomerMenuContent() {
       className={s.root}
       id="CustomerMenuContent"
     >
+      {user ? (
+        <DropdownMenuItem>
+          <a className={cn(s.displayName, 'border-b')}>{user.displayName}</a>
+        </DropdownMenuItem>
+      ) : (
+        ''
+      )}
       {LINKS.map(({ name, href }) => (
         <DropdownMenuItem key={href}>
           <a
@@ -58,7 +61,7 @@ export default function CustomerMenuContent() {
           }}
         >
           <div>
-            Theme: <strong>{theme}</strong>{' '}
+            Thème: <strong>{theme}</strong>{' '}
           </div>
           <div className="ml-3">
             {theme == 'dark' ? (

@@ -28,13 +28,14 @@
 }
 
 .title {
-  @apply font-extrabold text-7xl transition duration-300 text-transparent z-10;
-  font-family: 'Helvetica';
+  @apply font-extrabold text-transparent text-7xl transition duration-300 z-10;
   -webkit-text-stroke: 2px var(--accent-9);
 }
 
 .title:hover {
-  @apply text-accent-9 scale-105;
+  @apply text-white scale-105;
+  mix-blend-mode: difference;
+  -webkit-text-stroke: 2px;
 }
 
 @screen md {

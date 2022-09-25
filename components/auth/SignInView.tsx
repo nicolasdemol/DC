@@ -13,21 +13,20 @@ const SignInView: FC<Props> = () => {
   const [disabled, setDisabled] = useState(false)
   const { setModalView, closeModal } = useUI()
 
-  const { signin } = useAuth()
+  const { signin, error } = useAuth()
   const { register, handleSubmit } = useForm()
 
   const handleLogin = async (e) => {
     setLoading(true)
     setMessage('')
-    await signin(e.email, e.password)
-      .then(() => {
-        setLoading(false)
-        closeModal()
-      })
-      .catch((error) => {
-        setLoading(false)
+    await signin(e.email, e.password).then(() => {
+      setLoading(false)
+      if (error) {
         setMessage(error.message)
-      })
+      } else {
+        closeModal()
+      }
+    })
   }
 
   return (

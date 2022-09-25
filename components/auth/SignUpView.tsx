@@ -15,22 +15,21 @@ const SignUpView: FC<Props> = () => {
   const [dirty, setDirty] = useState(false)
   const [disabled, setDisabled] = useState(false)
 
-  const { signup } = useAuth()
+  const { signup, error } = useAuth()
   const { register, handleSubmit } = useForm()
   const { setModalView, closeModal } = useUI()
 
   const handleSignup = async (e) => {
     setLoading(true)
     setMessage('')
-    await signup(e.email, e.password)
-      .then(() => {
-        setLoading(false)
-        closeModal()
-      })
-      .catch((error) => {
-        setLoading(false)
+    await signup(e.email, e.password, e.firstname, e.lastname).then(() => {
+      setLoading(false)
+      if (error) {
         setMessage(error.message)
-      })
+      } else {
+        closeModal()
+      }
+    })
   }
 
   return (
@@ -45,6 +44,18 @@ const SignUpView: FC<Props> = () => {
         {message && (
           <div className="text-red border border-red p-3">{message}</div>
         )}
+        <div className="flex flex-row space-x-4">
+          <Input
+            type="text"
+            placeholder="Prénom"
+            {...register('firstname', { required: true })}
+          />
+          <Input
+            type="text"
+            placeholder="Nom"
+            {...register('lastname', { required: true })}
+          />
+        </div>
         <Input
           type="email"
           placeholder="Email"

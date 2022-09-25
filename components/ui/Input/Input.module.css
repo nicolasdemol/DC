@@ -1,5 +1,5 @@
 .root {
-  @apply bg-primary py-4 px-6 w-full appearance-none transition duration-150 ease-in-out pr-10 border-2 border-accent-9 rounded-xl text-accent-9 text-xl font-medium;
+  @apply bg-primary py-4 px-6 w-full appearance-none transition duration-150 ease-in-out border-2 border-accent-9 rounded-xl text-accent-9 text-xl font-medium;
 }
 
 .root:focus {

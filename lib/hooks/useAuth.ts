@@ -4,51 +4,60 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
+  onAuthStateChanged,
 } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 
 export const useAuth = () => {
   const auth = getAuth(firebaseApp)
   const [user, setUser] = useState(null)
-  const [isAuthenticating, setIsAuthenticating] = useState(true)
-
-  const handleUser = (user) => {
-    if (user) {
-      setUser(user)
-    } else {
-      setUser(null)
-    }
-    setIsAuthenticating(false)
-  }
+  const [error, setError] = useState(null)
 
   const signin = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password).then(
-      (userCredential) => {
+    return signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         setUser(userCredential.user)
-      }
-    )
+      })
+      .catch((error) => {
+        setError(error)
+      })
   }
 
-  const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password).then(
-      (userCredential) => {
+  const signup = (email, password, firstname, lastname) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         setUser(userCredential.user)
-      }
-    )
+        return updateProfile(userCredential.user, {
+          displayName: firstname + ' ' + lastname,
+        })
+      })
+      .catch((error) => {
+        setError(error)
+      })
   }
 
   const signout = () => {
-    return signOut(auth).then(() => setUser(false))
+    return signOut(auth)
+      .then(() => setUser(false))
+      .catch((error) => {
+        setError(error)
+      })
   }
 
   useEffect(() => {
-    const unsubscribe = auth.onIdTokenChanged(handleUser)
-    return () => unsubscribe()
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user)
+      } else {
+        setUser(null)
+      }
+    })
   }, [auth])
 
   return {
     user,
-    isAuthenticating,
+    error,
     signin,
     signup,
     signout,
