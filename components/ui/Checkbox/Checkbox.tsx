@@ -1,12 +1,10 @@
 import cn from 'clsx'
 import {
   useState,
-  useEffect,
   InputHTMLAttributes,
   JSXElementConstructor,
   forwardRef,
   useRef,
-  Component,
 } from 'react'
 import { IoCheckmark } from 'react-icons/io5'
 import s from './Checkbox.module.css'
@@ -50,7 +48,7 @@ const Checkbox: React.FC<CheckboxProps> = forwardRef((props, checkboxRef) => {
         type="checkbox"
         {...rest}
       />
-      {check ? <IoCheckmark size={48} className="mr-1" /> : ''}
+      {check ? <IoCheckmark size={36} className="mr-1" /> : ''}
       {label}
     </label>
   )

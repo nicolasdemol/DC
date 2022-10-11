@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import dynamic from 'next/dynamic'
 import { Navbar } from '@components/common'
-import { Modal, LoadingDots, Button } from '@components/ui'
+import { Sidebar, Modal, LoadingDots, Button } from '@components/ui'
+import { MenuSidebarView } from '@components/common/UserNav'
 import { useUI } from '@components/ui/context'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
+import type { Link as LinkProps } from '../UserNav/MenuSidebarView'
 
-import SignInView from '@components/auth/SignInView'
+import { SignInView } from '@components/auth'
 import Head from 'next/head'
 
 const Loading = () => (
@@ -46,6 +48,29 @@ const ModalUI: FC = () => {
   const { displayModal, closeModal, modalView } = useUI()
   return displayModal ? (
     <ModalView modalView={modalView} closeModal={closeModal} />
+  ) : null
+}
+
+const SidebarView: React.FC<{
+  sidebarView: string
+  closeSidebar(): any
+  links: LinkProps[]
+}> = ({ sidebarView, closeSidebar, links }) => {
+  return (
+    <Sidebar onClose={closeSidebar}>
+      {sidebarView === 'MOBILE_MENU_VIEW' && <MenuSidebarView links={links} />}
+    </Sidebar>
+  )
+}
+
+const SidebarUI: React.FC<{ links: LinkProps[] }> = ({ links }) => {
+  const { displaySidebar, closeSidebar, sidebarView } = useUI()
+  return displaySidebar ? (
+    <SidebarView
+      links={links}
+      sidebarView={sidebarView}
+      closeSidebar={closeSidebar}
+    />
   ) : null
 }
 

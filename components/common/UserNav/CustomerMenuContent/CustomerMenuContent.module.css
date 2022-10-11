@@ -8,7 +8,7 @@
 }
 
 .root {
-  @apply static border rounded-xl;
+  @apply static border border-accent-2 rounded-md overflow-hidden;
   min-width: inherit;
   height: inherit;
 }
@@ -16,7 +16,7 @@
 .link {
   @apply text-primary flex cursor-pointer px-6 py-3
     transition ease-in-out duration-150 leading-6
-    font-medium items-center capitalize w-full box-border
+    items-center capitalize w-full box-border
     outline-0;
 }
 

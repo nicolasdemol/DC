@@ -1,16 +1,8 @@
-import React, {
-  FC,
-  useState,
-  useRef,
-  forwardRef,
-  JSXElementConstructor,
-} from 'react'
-import cn from 'clsx'
+import React, { FC, useState } from 'react'
 import { motion } from 'framer-motion'
-import { mergeRefs } from 'react-merge-refs'
 import { useMousePosition } from '@lib/hooks/useMousePosition'
 import s from './Intro.module.css'
-import { Container, Text } from '@components/ui'
+import { Container, Video } from '@components/ui'
 import Link from 'next/link'
 
 const ITEMS = [
@@ -41,7 +33,12 @@ const Intro: FC = () => {
       x: pos.x - 300 / 2,
       y: pos.y - 300 / 2,
     },
-    inactive: { opacity: 0, x: pos.x - 300 / 2, y: pos.y - 300 / 2 },
+    inactive: {
+      height: 100,
+      width: 100,
+      x: pos.x - 100 / 2,
+      y: pos.y - 100 / 2,
+    },
   }
 
   return (
@@ -61,48 +58,24 @@ const Intro: FC = () => {
                 </Link>
               </div>
             ))}
+            <motion.div
+              className={s.circle}
+              variants={variants}
+              animate={video ? 'active' : 'inactive'}
+            >
+              {ITEMS.map(({ id }) => (
+                <Video
+                  key={id}
+                  className={video == id ? '' : 'hidden'}
+                  id={id}
+                />
+              ))}
+            </motion.div>
           </div>
-          <motion.div
-            className={s.circle}
-            variants={variants}
-            animate={video ? 'active' : 'inactive'}
-          >
-            {video ? <Video id={video} /> : ''}
-          </motion.div>
         </div>
       </Container>
     </div>
   )
 }
-
-interface VideoProps {
-  id: string
-  children?: any
-  className?: string
-  Component?: string | JSXElementConstructor<any>
-  innerRef?: any
-}
-
-const Video: FC<VideoProps> = forwardRef((props, videoRef) => {
-  Video.displayName = 'Video'
-  const { id, className, children, Component = 'video', ...rest } = props
-
-  const ref = useRef<typeof Component>(null)
-  return (
-    <Component
-      id={id}
-      className={cn(s.video, className)}
-      ref={mergeRefs([ref, videoRef])}
-      src={`./videos/${id}.mp4`}
-      preload="auto"
-      autoPlay
-      muted
-      loop
-      {...rest}
-    >
-      {children}
-    </Component>
-  )
-})
 
 export default Intro

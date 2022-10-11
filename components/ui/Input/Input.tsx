@@ -13,6 +13,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   onChange?: (...args: any[]) => any
   Component?: string | JSXElementConstructor<any>
   label?: string
+  labelVisible?: boolean
+  variant?: string
 }
 
 const Input: React.FC<InputProps> = forwardRef((props, inputRef) => {
@@ -24,16 +26,24 @@ const Input: React.FC<InputProps> = forwardRef((props, inputRef) => {
     onChange,
     onBlur,
     label,
+    labelVisible,
     name,
+    variant,
     value,
     ...rest
   } = props
-  const rootClassName = cn(s.root, {}, className)
+  const rootClassName = cn(
+    s.root,
+    {
+      [s.slim]: variant === 'slim',
+    },
+    className
+  )
   const ref = useRef<typeof Component>(null)
 
   return (
-    <>
-      <label hidden htmlFor={name}>
+    <div>
+      <label className={cn(s.label, { hidden: !labelVisible })} htmlFor={name}>
         {label}
       </label>
       <Component
@@ -45,7 +55,7 @@ const Input: React.FC<InputProps> = forwardRef((props, inputRef) => {
         ref={mergeRefs([ref, inputRef])}
         {...rest}
       />
-    </>
+    </div>
   )
 })
 

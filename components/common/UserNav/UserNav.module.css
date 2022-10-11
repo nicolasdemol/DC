@@ -1,7 +1,42 @@
 .root {
-  @apply flex items-center;
+  @apply relative flex items-center;
+}
+
+.list {
+  @apply flex flex-row items-center justify-items-end h-full;
+}
+
+.item {
+  @apply ml-6 cursor-pointer relative transition ease-in-out
+  duration-100 flex items-center outline-none text-primary;
+}
+
+.item:hover {
+  @apply text-accent-6 transition duration-100;
+}
+
+.item:first-child {
+  @apply ml-0;
+}
+
+.item:focus,
+.item:active {
+  @apply outline-none;
+}
+
+.mobileMenu {
+  @apply flex lg:hidden ml-6 text-white;
 }
 
 .avatarButton {
   @apply flex justify-center rounded-full;
+}
+
+@media screen(lg) {
+  .dropdownDesktop {
+    @apply block;
+  }
+  .dropdownMobile {
+    @apply hidden;
+  }
 }

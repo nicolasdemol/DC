@@ -3,6 +3,7 @@ import '@assets/main.css'
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { ManagedUIContext } from '@components/ui/context'
+import { AuthProvider } from '@lib/hooks/useAuth'
 
 interface NoopProps {
   children: any
@@ -20,9 +21,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ManagedUIContext>
-        <Layout pageProps={pageProps}>
-          <Component {...pageProps} />
-        </Layout>
+        <AuthProvider>
+          <Layout pageProps={pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </AuthProvider>
       </ManagedUIContext>
     </>
   )

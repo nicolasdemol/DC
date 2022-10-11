@@ -12,12 +12,11 @@
 }
 
 .link {
-  @apply text-xl font-medium
-    transition ease-in-out duration-300 cursor-pointer;
+  @apply text-lg border border-transparent cursor-pointer py-1;
 }
 
 .link:hover {
-  @apply text-accent-5;
+  @apply border-b-accent-9;
 }
 
 .link:focus {

@@ -10,9 +10,12 @@ function getVideoStream(req: NextApiRequest, res: NextApiResponse) {
     return res.status(400).send('Rang must be provided')
   }
 
-  const videoId = req.query.videoId
+  const id = req.query.id
 
-  const videoPath = `./videos/${videoId}.mp4`
+  let videoPath = `public/static/videos/${id}.mp4`
+  if (process.env.NODE_ENV == 'production') {
+    videoPath = `/static/videos/${id}.mp4`
+  }
 
   const videoSizeInBytes = fs.statSync(videoPath).size
 

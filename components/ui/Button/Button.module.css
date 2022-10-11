@@ -1,10 +1,9 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer 
-    px-9 py-3 transition ease-in-out duration-150
-    shadow-md text-center justify-center rounded-xl
-    border-2 border-accent-9 items-center font-semibold
-    tracking-wide text-lg;
-  max-height: 64px;
+    px-4 py-3 transition ease-in-out duration-150
+    shadow-md text-center justify-center rounded-md
+    border border-accent-9 items-center
+    text-lg font-medium;
 }
 
 .root:hover {
@@ -20,11 +19,15 @@
 }
 
 .loading {
-  @apply bg-accent-9 text-accent-9 border-accent-9 cursor-not-allowed;
+  @apply cursor-not-allowed;
 }
 
 .slim {
-  @apply px-4 py-2 transform-none normal-case;
+  @apply px-4 py-1;
+}
+
+.medium {
+  @apply px-4 py-2;
 }
 
 .slide {
@@ -38,7 +41,7 @@
 }
 
 .naked {
-  @apply bg-accent-0 border-2 text-accent-9;
+  @apply bg-accent-0 p-2 border-none text-accent-9;
 }
 
 .disabled,

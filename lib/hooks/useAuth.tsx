@@ -7,10 +7,17 @@ import {
   updateProfile,
   onAuthStateChanged,
 } from 'firebase/auth'
-import { useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
+
+const AuthContext = createContext(null)
 
 export const useAuth = () => {
+  return useContext(AuthContext)
+}
+
+export const AuthProvider = ({ children }) => {
   const auth = getAuth(firebaseApp)
+  const [isAuthenticating, setIsAuthenticating] = useState(true)
   const [user, setUser] = useState(null)
   const [error, setError] = useState(null)
 
@@ -45,21 +52,43 @@ export const useAuth = () => {
       })
   }
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user)
-      } else {
-        setUser(null)
-      }
+  const updateDisplayName = (displayName) => {
+    return updateProfile(user, {
+      displayName: displayName,
+    }).catch((error) => {
+      setError(error)
     })
-  }, [auth])
+  }
 
-  return {
+  const updateAvatar = (photoURL) => {
+    return updateProfile(user, {
+      photoURL: photoURL,
+    }).catch((error) => {
+      setError(error)
+    })
+  }
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user)
+      setIsAuthenticating(false)
+    })
+    return () => unsubscribe()
+  })
+
+  const values = {
     user,
-    error,
+    isAuthenticating,
     signin,
     signup,
     signout,
+    updateDisplayName,
+    updateAvatar,
   }
+
+  return (
+    <AuthContext.Provider value={values}>
+      {!isAuthenticating && children}
+    </AuthContext.Provider>
+  )
 }

@@ -11,8 +11,16 @@ import {
 
 const LINKS = [
   {
-    name: 'Mes Commandes',
-    href: '/orders',
+    name: 'Votre profil',
+    href: '/profile',
+  },
+  {
+    name: 'Vos projets',
+    href: '/projects',
+  },
+  {
+    name: 'Vos discussions',
+    href: '/chat',
   },
 ]
 
@@ -36,7 +44,9 @@ export default function CustomerMenuContent() {
     >
       {user ? (
         <DropdownMenuItem>
-          <a className={cn(s.displayName, 'border-b')}>{user.displayName}</a>
+          <a className={cn(s.displayName, 'border-b border-accent-2')}>
+            {user.displayName}
+          </a>
         </DropdownMenuItem>
       ) : (
         ''
@@ -55,7 +65,7 @@ export default function CustomerMenuContent() {
       ))}
       <DropdownMenuItem>
         <a
-          className={cn(s.link, 'justify-between')}
+          className={cn(s.link, 'border-t border-accent-2 justify-between')}
           onClick={() => {
             setTheme(theme === 'dark' ? 'light' : 'dark')
           }}
@@ -73,8 +83,13 @@ export default function CustomerMenuContent() {
         </a>
       </DropdownMenuItem>
       <DropdownMenuItem>
+        <a className={s.link} onClick={(e) => handleClick(e, '/config')}>
+          Paramètres
+        </a>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
         <a
-          className={cn(s.link, 'border-t border-accent-2 mt-4')}
+          className={cn(s.link, 'border-t border-accent-2')}
           onClick={() => signout()}
         >
           Déconnexion

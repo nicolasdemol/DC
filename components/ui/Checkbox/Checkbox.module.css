@@ -1,7 +1,6 @@
 .root {
-  @apply relative flex bg-accent-0 text-accent-9 cursor-pointer tracking-wide
-      shadow-md text-center justify-center rounded-xl
-      border-2 border-accent-9 items-center font-medium text-2xl;
+  @apply relative flex bg-accent-1 border text-accent-9 cursor-pointer tracking-wide
+      text-center justify-center rounded-lg items-center text-lg;
   min-height: 64px;
   input[type='checkbox'] {
     clip: rect(0 0 0 0);

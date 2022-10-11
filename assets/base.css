@@ -30,8 +30,8 @@
   --accent-7: #333333;
   --accent-8: #111111;
   --accent-9: #000;
-  --font-sans: 'Inter', -apple-system, system-ui, BlinkMacSystemFont,
-    'Helvetica Neue', 'Helvetica', sans-serif;
+  --font-sans: 'Inter', 'Helvetica', -apple-system, system-ui, BlinkMacSystemFont,
+    'Helvetica Neue', sans-serif;
 }
 
 [data-theme='dark'] {

@@ -15,10 +15,6 @@
   left: 0;
 }
 
-.video {
-  @apply w-full h-full scale-150;
-}
-
 .heading {
   @apply text-3xl font-extrabold;
 }
@@ -29,13 +25,13 @@
 
 .title {
   @apply font-extrabold text-transparent text-7xl transition duration-300 z-10;
-  -webkit-text-stroke: 2px var(--accent-9);
+  -webkit-text-stroke: 1px var(--accent-9);
 }
 
 .title:hover {
   @apply text-white scale-105;
   mix-blend-mode: difference;
-  -webkit-text-stroke: 2px;
+  -webkit-text-stroke: 1px;
 }
 
 @screen md {

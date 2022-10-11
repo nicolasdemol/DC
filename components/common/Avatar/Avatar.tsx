@@ -1,3 +1,4 @@
+import cn from 'clsx'
 import { FC, useRef, useEffect } from 'react'
 import { useUserAvatar } from '@lib/hooks/useUserAvatar'
 
@@ -6,15 +7,19 @@ interface Props {
   children?: any
 }
 
-const Avatar: FC<Props> = ({}) => {
+const Avatar: FC<Props> = ({ className }) => {
   let ref = useRef() as React.MutableRefObject<HTMLInputElement>
-  let { userAvatar } = useUserAvatar()
+  const { userAvatar } = useUserAvatar()
+  useEffect(() => {}, [userAvatar])
 
   return (
     <div
       ref={ref}
       style={{ backgroundImage: userAvatar }}
-      className="inline-block h-10 w-10 rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition-colors ease-linear"
+      className={cn(
+        className,
+        'inline-block bg-cover rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition-colors ease-linear'
+      )}
     ></div>
   )
 }
