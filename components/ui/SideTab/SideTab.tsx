@@ -4,7 +4,7 @@ import s from './SideTab.module.css'
 
 interface SideTabProps {
   className?: string
-  tabs?: Array
+  tabs?: any
   activeTab: Function
 }
 
