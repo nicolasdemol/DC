@@ -1,0 +1,15 @@
+.list {
+  @apply grid md:grid-cols-2 gap-6 mt-4;
+}
+
+.item {
+  @apply relative  rounded-3xl overflow-hidden cursor-pointer h-56 z-0;
+}
+
+.text {
+  @apply absolute inset-1/2 flex justify-center items-center z-20 text-center;
+}
+
+.filter {
+  @apply absolute w-full h-full blur-sm bg-accent-3 opacity-30 z-10;
+}

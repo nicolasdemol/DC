@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useMousePosition } from '@lib/hooks/useMousePosition'
 import s from './Intro.module.css'
-import { Container, Video } from '@components/ui'
+import { Container, Video, Text } from '@components/ui'
 import Link from 'next/link'
 
 const ITEMS = [
@@ -34,6 +34,7 @@ const Intro: FC = () => {
       y: pos.y - 300 / 2,
     },
     inactive: {
+      opacity: 0,
       height: 100,
       width: 100,
       x: pos.x - 100 / 2,
@@ -43,7 +44,10 @@ const Intro: FC = () => {
 
   return (
     <div className="bg-accent-0">
-      <Container>
+      <Container className="mt-8">
+        <span className={s.bigHeading}>
+          Dev<span className={s.bar}></span>Agency®
+        </span>
         <div id="intro" className={s.root}>
           <div id="list" className={s.list}>
             {ITEMS.map(({ id, title, href }) => (

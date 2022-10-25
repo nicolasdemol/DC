@@ -8,7 +8,7 @@
 
 .item {
   @apply ml-6 cursor-pointer relative transition ease-in-out
-  duration-100 flex items-center outline-none text-primary;
+  duration-100 flex items-center text-primary outline-none;
 }
 
 .item:hover {
@@ -30,6 +30,11 @@
 
 .avatarButton {
   @apply flex justify-center rounded-full;
+}
+
+.avatarButton:focus,
+.mobileMenu:focus {
+  @apply outline-none;
 }
 
 @media screen(lg) {

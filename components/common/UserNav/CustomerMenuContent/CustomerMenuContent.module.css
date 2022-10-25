@@ -13,11 +13,16 @@
   height: inherit;
 }
 
+.displayName {
+  @apply text-primary flex cursor-pointer px-6 py-3
+    transition ease-in-out duration-150 leading-6 text-lg
+    font-bold items-center capitalize w-full box-border;
+}
+
 .link {
   @apply text-primary flex cursor-pointer px-6 py-3
     transition ease-in-out duration-150 leading-6
-    items-center capitalize w-full box-border
-    outline-0;
+    items-center capitalize w-full box-border outline-0;
 }
 
 .link:hover {
@@ -26,11 +31,4 @@
 
 .link.active {
   @apply font-bold bg-accent-2;
-}
-
-.displayName {
-  @apply text-primary flex cursor-pointer px-6 py-3
-    transition ease-in-out duration-150 leading-6 text-lg
-    font-bold items-center capitalize w-full box-border
-    outline-0;
 }

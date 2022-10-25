@@ -1,5 +1,5 @@
 import cn from 'clsx'
-import { FC, useRef, useEffect } from 'react'
+import { FC, useRef, useState, useEffect } from 'react'
 import { useUserAvatar } from '@lib/hooks/useUserAvatar'
 
 interface Props {
@@ -9,8 +9,8 @@ interface Props {
 
 const Avatar: FC<Props> = ({ className }) => {
   let ref = useRef() as React.MutableRefObject<HTMLInputElement>
-  const { userAvatar } = useUserAvatar()
-  useEffect(() => {}, [userAvatar])
+  const { userAvatar, isUpdatingAvatar } = useUserAvatar()
+  useEffect(() => {}, [isUpdatingAvatar])
 
   return (
     <div

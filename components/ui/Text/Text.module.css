@@ -15,7 +15,7 @@
 }
 
 .subsectionHeading {
-  @apply pt-1 pb-2 font-bold cursor-pointer;
+  @apply pt-1 pb-1 font-bold cursor-pointer;
 }
 
 /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.).

@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const CHUNK_SIZE_IN_BYTES = 1000000 // 1 mb
 
@@ -10,12 +10,9 @@ function getVideoStream(req: NextApiRequest, res: NextApiResponse) {
     return res.status(400).send('Rang must be provided')
   }
 
-  const id = req.query.id
+  const { id } = req.query
 
-  let videoPath = `public/static/videos/${id}.mp4`
-  if (process.env.NODE_ENV == 'production') {
-    videoPath = `/static/videos/${id}.mp4`
-  }
+  const videoPath = `/videos/${id}.mp4`
 
   const videoSizeInBytes = fs.statSync(videoPath).size
 

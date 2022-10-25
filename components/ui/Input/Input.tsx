@@ -5,10 +5,22 @@ import React, {
   forwardRef,
   InputHTMLAttributes,
   JSXElementConstructor,
+  Component,
+  TextareaHTMLAttributes,
 } from 'react'
 import { mergeRefs } from 'react-merge-refs'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  className?: string
+  onChange?: (...args: any[]) => any
+  Component?: string | JSXElementConstructor<any>
+  label?: string
+  labelVisible?: boolean
+  variant?: string
+}
+
+export interface TextAreaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string
   onChange?: (...args: any[]) => any
   Component?: string | JSXElementConstructor<any>
@@ -43,7 +55,10 @@ const Input: React.FC<InputProps> = forwardRef((props, inputRef) => {
 
   return (
     <div>
-      <label className={cn(s.label, { hidden: !labelVisible })} htmlFor={name}>
+      <label
+        className={cn(s.label, { hidden: !labelVisible }, 'leading-7')}
+        htmlFor={name}
+      >
         {label}
       </label>
       <Component

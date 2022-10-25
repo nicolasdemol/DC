@@ -6,6 +6,10 @@
   @apply bg-transparent w-60 pl-4 py-2 appearance-none transition duration-150 ease-in-out pr-10 rounded-full;
 }
 
+.input:focus {
+  @apply outline-none shadow-outline-normal;
+}
+
 .input::placeholder {
   @apply text-accent-9;
 }

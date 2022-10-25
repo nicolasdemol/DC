@@ -1,9 +1,9 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer 
     px-4 py-3 transition ease-in-out duration-150
-    shadow-md text-center justify-center rounded-md
+    text-center justify-center rounded-lg
     border border-accent-9 items-center
-    text-lg font-medium;
+    text-lg font-semibold;
 }
 
 .root:hover {

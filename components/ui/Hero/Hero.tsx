@@ -11,7 +11,7 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ headline, description }) => {
   return (
-    <div className="bg-accent-0">
+    <div className="bg-accent-1 border-y ">
       <Container>
         <div className={s.root}>
           <h2 className={s.title}>{headline}</h2>

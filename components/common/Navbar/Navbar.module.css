@@ -12,11 +12,11 @@
 }
 
 .link {
-  @apply text-lg border border-transparent cursor-pointer py-1;
+  @apply text-lg border rounded-lg border-transparent cursor-pointer px-1;
 }
 
 .link:hover {
-  @apply border-b-accent-9;
+  @apply border-accent-9;
 }
 
 .link:focus {
