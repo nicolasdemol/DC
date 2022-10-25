@@ -1,8 +1,7 @@
 import { Text, Grid } from '@components/ui'
 import Image from 'next/image'
-import darkTheme from 'public/static/images/darkTheme.png'
-import lightTheme from 'public/static/images/lightTheme.png'
-import cn from 'clsx'
+import darkTheme from '/images/darkTheme.png'
+import lightTheme from '/images/lightTheme.png'
 import s from './Appearence.module.css'
 import { useTheme } from 'next-themes'
 
