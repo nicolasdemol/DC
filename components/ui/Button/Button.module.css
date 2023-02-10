@@ -10,7 +10,8 @@
   @apply bg-accent-0 text-accent-9;
 }
 
-.root:focus {
+.root:focus,
+.root:active {
   @apply shadow-outline-normal outline-none;
 }
 

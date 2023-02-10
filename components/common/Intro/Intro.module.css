@@ -1,9 +1,9 @@
 .root {
-  @apply py-20;
+  @apply flex h-screen justify-center items-center ;
 }
 
 .list {
-  @apply grid grid-cols-1 gap-12;
+  @apply grid grid-cols-1 mx-10 gap-20;
 }
 .circle {
   @apply h-full w-full overflow-hidden;
@@ -20,14 +20,6 @@
   animation: 1s extend ease-in-out;
 }
 
-.bigHeading {
-  @apply flex font-semibold pt-12;
-  font-size: 150px;
-}
-
-.heading {
-  @apply text-3xl font-extrabold;
-}
 
 .item {
   @apply flex items-center justify-center;
@@ -44,18 +36,12 @@
   -webkit-text-stroke: 2px;
 }
 
-@screen md {
+@screen lg {
+  .title {
+    @apply text-8xl
+  }
   .list {
     @apply grid-cols-3 gap-0;
-  }
-}
-
-@screen lg {
-  .root {
-    @apply mb-40;
-  }
-  .title {
-    @apply text-8xl;
   }
 }
 

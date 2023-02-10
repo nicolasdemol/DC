@@ -43,42 +43,33 @@ const Intro: FC = () => {
   }
 
   return (
-    <div className="bg-accent-0">
-      <Container className="mt-8">
-        <span className={s.bigHeading}>
-          Dev<span className={s.bar}></span>Agency®
-        </span>
-        <div id="intro" className={s.root}>
-          <div id="list" className={s.list}>
-            {ITEMS.map(({ id, title, href }) => (
-              <div
-                key={id}
-                className={s.item}
-                onMouseEnter={() => setVideo(id)}
-                onMouseLeave={() => setVideo('')}
-              >
-                <Link href={href}>
-                  <a className={s.title}>{title}</a>
-                </Link>
-              </div>
-            ))}
-            <motion.div
-              className={s.circle}
-              variants={variants}
-              animate={video ? 'active' : 'inactive'}
+    <Container>
+      <div id="intro" className={s.root}>
+        <div id="list" className={s.list}>
+          {ITEMS.map(({ id, title, href }) => (
+            <div
+              key={id}
+              className={s.item}
+              onMouseEnter={() => setVideo(id)}
+              onMouseLeave={() => setVideo('')}
             >
-              {ITEMS.map(({ id }) => (
-                <Video
-                  key={id}
-                  className={video == id ? '' : 'hidden'}
-                  id={id}
-                />
-              ))}
-            </motion.div>
-          </div>
+              <Link href={href}>
+                <a className={s.title}>{title}</a>
+              </Link>
+            </div>
+          ))}
+          <motion.div
+            className={s.circle}
+            variants={variants}
+            animate={video ? 'active' : 'inactive'}
+          >
+            {ITEMS.map(({ id }) => (
+              <Video key={id} className={video == id ? '' : 'hidden'} id={id} />
+            ))}
+          </motion.div>
         </div>
-      </Container>
-    </div>
+      </div>
+    </Container>
   )
 }
 

@@ -6,6 +6,14 @@
   @apply flex flex-row items-center justify-items-end h-full;
 }
 
+.menu {
+  @apply hidden lg:block
+}
+
+.mobileMenu {
+  @apply block lg:hidden ml-6 text-white;
+}
+
 .item {
   @apply ml-6 cursor-pointer relative transition ease-in-out
   duration-100 flex items-center text-primary outline-none;
@@ -19,29 +27,13 @@
   @apply ml-0;
 }
 
-.item:focus,
-.item:active {
+.list:focus,
+.list:active {
   @apply outline-none;
 }
 
-.mobileMenu {
-  @apply flex lg:hidden ml-6 text-white;
-}
+
 
 .avatarButton {
   @apply flex justify-center rounded-full;
-}
-
-.avatarButton:focus,
-.mobileMenu:focus {
-  @apply outline-none;
-}
-
-@media screen(lg) {
-  .dropdownDesktop {
-    @apply block;
-  }
-  .dropdownMobile {
-    @apply hidden;
-  }
 }

@@ -1,5 +1,5 @@
 .root {
-  @apply sticky top-0 bg-primary z-40 transition-all duration-150 lg:px-4;
+  @apply fixed w-full top-0 bg-primary z-40 transition-all duration-150 lg:px-20;
   min-height: 74px;
 }
 
@@ -12,11 +12,11 @@
 }
 
 .link {
-  @apply text-lg border rounded-lg border-transparent cursor-pointer px-1;
+  @apply text-xl cursor-pointer px-1;
 }
 
 .link:hover {
-  @apply border-accent-9;
+  @apply underline underline-offset-8;
 }
 
 .link:focus {

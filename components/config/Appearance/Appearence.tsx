@@ -1,14 +1,10 @@
 import { Text, Grid } from '@components/ui'
 import Image from 'next/image'
-import darkTheme from '/images/darkTheme.png'
-import lightTheme from '/images/lightTheme.png'
 import s from './Appearence.module.css'
 import { useTheme } from 'next-themes'
 
 const Appearance = () => {
   const { theme, setTheme } = useTheme()
-
-  const handleTheme = (e) => {}
 
   return (
     <>
@@ -20,7 +16,7 @@ const Appearance = () => {
           <div className={s.filter}></div>
           <Image
             className={s.img}
-            src={lightTheme}
+            src="/images/lightTheme.png"
             layout="fill"
             alt="lightTheme"
           />
@@ -29,7 +25,7 @@ const Appearance = () => {
           <div className={s.filter}></div>
           <Image
             className={s.img}
-            src={darkTheme}
+            src="/images/darkTheme.png"
             layout="fill"
             alt="darkTheme"
           />

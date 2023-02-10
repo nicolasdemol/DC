@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
       <div className={s.nav}>
         <nav className={s.navMenu}>
           <Link href="/search">
-            <a className={s.link}>Équipe</a>
+            <a className={s.link}>Produits</a>
           </Link>
           <Link href="/search">
             <a className={s.link}>Services</a>
