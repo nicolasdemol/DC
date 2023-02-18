@@ -1,8 +1,8 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useMousePosition } from '@lib/hooks/useMousePosition'
 import s from './Intro.module.css'
-import { Container, Video, Text } from '@components/ui'
+import { Container, Video, Text, Logo } from '@components/ui'
 import Link from 'next/link'
 
 const ITEMS = [
@@ -30,46 +30,46 @@ const Intro: FC = () => {
   const variants = {
     active: {
       opacity: 1,
-      x: pos.x - 300 / 2,
-      y: pos.y - 300 / 2,
+      height: 300,
+      width: 300,
+      x: pos.x - 150,
+      y: pos.y - 150,
     },
     inactive: {
       opacity: 0,
-      height: 100,
-      width: 100,
-      x: pos.x - 100 / 2,
-      y: pos.y - 100 / 2,
+      height: 300,
+      width: 300,
+      x: pos.x - 150,
+      y: pos.y - 150,
     },
   }
 
   return (
-    <Container>
-      <div id="intro" className={s.root}>
-        <div id="list" className={s.list}>
-          {ITEMS.map(({ id, title, href }) => (
-            <div
-              key={id}
-              className={s.item}
-              onMouseEnter={() => setVideo(id)}
-              onMouseLeave={() => setVideo('')}
-            >
-              <Link href={href}>
-                <a className={s.title}>{title}</a>
-              </Link>
-            </div>
-          ))}
-          <motion.div
-            className={s.circle}
-            variants={variants}
-            animate={video ? 'active' : 'inactive'}
+    <div id="intro" className={s.root}>
+      <div id="list" className={s.list}>
+        {ITEMS.map(({ id, title, href }) => (
+          <div
+            key={id}
+            className={s.item}
+            onMouseEnter={() => setVideo(id)}
+            onMouseLeave={() => setVideo('')}
           >
-            {ITEMS.map(({ id }) => (
-              <Video key={id} className={video == id ? '' : 'hidden'} id={id} />
-            ))}
-          </motion.div>
-        </div>
+            <Link href={href}>
+              <a className={s.title}>{title}</a>
+            </Link>
+          </div>
+        ))}
+        <motion.div
+          className={s.circle}
+          variants={variants}
+          animate={video ? 'active' : 'inactive'}
+        >
+          {ITEMS.map(({ id }) => (
+            <Video key={id} className={video == id ? '' : 'hidden'} id={id} />
+          ))}
+        </motion.div>
       </div>
-    </Container>
+    </div>
   )
 }
 

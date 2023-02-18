@@ -1,45 +1,44 @@
 import cn from 'clsx'
 import React from 'react'
-import Link from 'next/link'
 import s from './UserNav.module.css'
-import { VscMenu as Menu } from 'react-icons/vsc'
+import { VscMenu } from 'react-icons/vsc'
 import { Avatar } from '@components/common'
 import { useUI } from '@components/ui/context'
 import { useAuth } from '@lib/hooks/useAuth'
-import { Dropdown, Button } from '@components/ui'
+import { Button } from '@components/ui'
 
 const UserNav: React.FC<{
   className?: string
 }> = ({ className }) => {
   const { user } = useAuth()
-  const { openModal, setSidebarView, openSidebar } = useUI()
+  const { openModal, setModalView, setSidebarView, openSidebar } = useUI()
 
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
-        <li className={s.menu}>
+        <li className={s.item}>
           {user ? (
-            <div aria-label="Menu" className={s.avatarButton}>
-              <Avatar className="h-12 w-12" />
+            <div
+              onClick={() => {
+                setSidebarView('MOBILE_MENU_VIEW')
+                openSidebar()
+              }}
+              aria-label="Menu"
+              className={s.avatarButton}
+            >
+              <Avatar className="h-12 w-12 cursor-pointer" />
             </div>
           ) : (
-            <Button variant="medium" onClick={openModal}>
+            <Button
+              variant="medium"
+              onClick={() => {
+                setModalView('LOGIN_VIEW')
+                openModal()
+              }}
+            >
               Connexion
             </Button>
           )}
-        </li>
-        <li className={s.mobileMenu}>
-          <Button
-            className={s.item}
-            aria-label="Menu"
-            variant="naked"
-            onClick={() => {
-              setSidebarView('MOBILE_MENU_VIEW')
-              openSidebar()
-            }}
-          >
-            <Menu size={32} />
-          </Button>
         </li>
       </ul>
     </nav>

@@ -34,6 +34,30 @@ export default function Config() {
   )
 }
 
+export async function getStaticProps() {
+  const categories = [
+    {
+      id: 'account',
+      name: 'Mon Profil',
+      slug: 'account',
+      path: '/account',
+    },
+    {
+      id: 'contracts',
+      name: 'Mes Contrats',
+      slug: 'contracts',
+      path: '/contracts',
+    },
+    {
+      id: 'config',
+      name: 'Mes Paramètres',
+      slug: 'config',
+      path: '/config',
+    },
+  ]
+  return { props: { categories }, revalidate: 60 }
+}
+
 const UserInfos = ({ user }) => {
   return (
     <div className="flex flex-col md:flex-row w-full justify-between">

@@ -1,6 +1,30 @@
 import { Layout, Intro } from '@components/common'
 import { Hero } from '@components/ui'
 
+export async function getStaticProps() {
+  const categories = [
+    {
+      id: 'account',
+      name: 'Mon Profil',
+      slug: 'account',
+      path: '/account',
+    },
+    {
+      id: 'contracts',
+      name: 'Mes Contrats',
+      slug: 'contracts',
+      path: '/contracts',
+    },
+    {
+      id: 'config',
+      name: 'Mes Paramètres',
+      slug: 'config',
+      path: '/config',
+    },
+  ]
+  return { props: { categories }, revalidate: 60 }
+}
+
 export default function Home() {
   return (
     <>

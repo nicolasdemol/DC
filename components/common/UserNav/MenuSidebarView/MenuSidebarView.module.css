@@ -3,5 +3,5 @@
 }
 
 .item {
-  @apply text-xl font-bold py-2;
+  @apply text-4xl font-bold py-2;
 }

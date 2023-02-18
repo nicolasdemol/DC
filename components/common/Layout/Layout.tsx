@@ -29,7 +29,11 @@ const FeatureBar = dynamic(() => import('@components/common/FeatureBar'), {
 })
 
 interface Props {
-  children: any
+  pageProps: {
+    pages?: []
+    categories: any[]
+  }
+  children?: React.ReactNode
 }
 
 const ModalView: FC<{ modalView: string; closeModal(): any }> = ({
@@ -74,9 +78,15 @@ const SidebarUI: React.FC<{ links: LinkProps[] }> = ({ links }) => {
   ) : null
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({
+  children,
+  pageProps: { categories = [], ...pageProps },
+}) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
-  const navBarlinks = {}
+  const navBarlinks = categories.slice(0, 3).map((c) => ({
+    label: c.name,
+    href: `/${c.slug}`,
+  }))
   return (
     <>
       <Head>
@@ -85,6 +95,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <Navbar />
       <main className="fit">{children}</main>
       <ModalUI />
+      <SidebarUI links={navBarlinks} />
       <FeatureBar
         title="Ce site utilise des cookies pour améliorer votre expérience. En cliquant, vous acceptez notre politique de confidentialité."
         hide={acceptedCookies}

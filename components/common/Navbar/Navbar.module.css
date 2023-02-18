@@ -1,22 +1,22 @@
 .root {
-  @apply fixed w-full top-0 bg-primary z-40 transition-all duration-150 lg:px-20;
-  min-height: 74px;
+  @apply sticky w-full top-0 bg-primary z-40 transition-all duration-150;
 }
 
 .nav {
-  @apply grid grid-cols-2 lg:grid-cols-3 py-3;
+  @apply grid grid-cols-2 lg:grid-cols-3 items-center;
+  height: 80px;
 }
 
 .navMenu {
-  @apply hidden lg:flex space-x-8 items-center;
+  @apply hidden lg:flex space-x-6 
 }
 
 .link {
-  @apply text-xl cursor-pointer px-1;
+  @apply text-xl font-medium cursor-pointer;
 }
 
 .link:hover {
-  @apply underline underline-offset-8;
+  @apply font-bold;
 }
 
 .link:focus {
@@ -32,5 +32,5 @@
 }
 
 .user {
-  @apply flex items-center justify-self-end space-x-10;
+  @apply flex items-center justify-self-end space-x-6;
 }

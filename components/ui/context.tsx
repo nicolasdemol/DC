@@ -27,10 +27,10 @@ type Action =
       type: 'CLOSE_SIDEBAR'
     }
   | {
-      type: 'OPEN_DROPDOWN'
+      type: 'OPEN_MENU'
     }
   | {
-      type: 'CLOSE_DROPDOWN'
+      type: 'CLOSE_MENU'
     }
   | {
       type: 'OPEN_MODAL'
@@ -78,13 +78,13 @@ function uiReducer(state: State, action: Action) {
         displaySidebar: false,
       }
     }
-    case 'OPEN_DROPDOWN': {
+    case 'OPEN_MENU': {
       return {
         ...state,
         displayDropdown: true,
       }
     }
-    case 'CLOSE_DROPDOWN': {
+    case 'CLOSE_MENU': {
       return {
         ...state,
         displayDropdown: false,
@@ -147,12 +147,12 @@ export const UIProvider: FC<PropsWithChildren> = (props) => {
     [dispatch, state.displaySidebar]
   )
 
-  const openDropdown = useCallback(
-    () => dispatch({ type: 'OPEN_DROPDOWN' }),
+  const openMenu = useCallback(
+    () => dispatch({ type: 'OPEN_MENU' }),
     [dispatch]
   )
-  const closeDropdown = useCallback(
-    () => dispatch({ type: 'CLOSE_DROPDOWN' }),
+  const closeMenu = useCallback(
+    () => dispatch({ type: 'CLOSE_MENU' }),
     [dispatch]
   )
 
@@ -187,8 +187,8 @@ export const UIProvider: FC<PropsWithChildren> = (props) => {
       closeSidebar,
       toggleSidebar,
       closeSidebarIfPresent,
-      openDropdown,
-      closeDropdown,
+      openMenu,
+      closeMenu,
       openModal,
       closeModal,
       setModalView,

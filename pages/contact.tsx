@@ -22,7 +22,7 @@ export default function Contact() {
         puissions vous contacter.
       </Text>
       <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <Grid className="mt-10" variant="filled" layout="normal">
+        <Grid className="mt-10 font-semibold" variant="filled" layout="normal">
           <Checkbox
             {...register('checkbox')}
             value="application"
