@@ -26,11 +26,11 @@ const UserNav: React.FC<{
               aria-label="Menu"
               className={s.avatarButton}
             >
-              <Avatar className="h-12 w-12 cursor-pointer" />
+              <Avatar className="h-10 w-10 cursor-pointer" />
             </div>
           ) : (
             <Button
-              variant="medium"
+              variant="slim"
               onClick={() => {
                 setModalView('LOGIN_VIEW')
                 openModal()

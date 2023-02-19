@@ -4,7 +4,7 @@
 
 .nav {
   @apply grid grid-cols-2 lg:grid-cols-3 items-center;
-  height: 80px;
+  height: 70px;
 }
 
 .navMenu {
@@ -12,11 +12,11 @@
 }
 
 .link {
-  @apply text-xl font-medium cursor-pointer;
+  @apply tracking-widest uppercase text-sm font-semibold cursor-pointer border border-transparent rounded-md p-1;
 }
 
 .link:hover {
-  @apply font-bold;
+  @apply border-accent-9;
 }
 
 .link:focus {

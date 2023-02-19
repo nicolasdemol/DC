@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Container } from '@components/ui'
+import { Container, Text } from '@components/ui'
 import { IoArrowForward } from 'react-icons/io5'
 import s from './Hero.module.css'
 import Link from 'next/link'
@@ -14,10 +14,12 @@ const Hero: FC<HeroProps> = ({ headline, description }) => {
     <div className="bg-accent-1 border-y ">
       <Container>
         <div className={s.root}>
-          <h2 className={s.title}>{headline}</h2>
+          <Text className={s.title} variant="pageHeading">
+            {headline}
+          </Text>
           <div className={s.description}>
-            <p>{description}</p>
-            <Link href="/">
+            <Text variant="body">{description}</Text>
+            <Link href="/services">
               <a className="flex items-center text-accent-9 pt-3 font-bold hover:underline cursor-pointer w-max-content">
                 En savoir plus
                 <IoArrowForward width="20" height="20" className="ml-1" />

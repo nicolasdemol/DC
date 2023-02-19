@@ -3,7 +3,7 @@
 }
 
 .item {
-  @apply relative flex cursor-pointer rounded-lg items-center pl-3;
+  @apply relative flex cursor-pointer rounded-md items-center pl-3;
 }
 
 .item:hover {

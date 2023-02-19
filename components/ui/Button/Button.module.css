@@ -1,18 +1,17 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer 
     px-4 py-3 transition ease-in-out duration-150
-    text-center justify-center rounded-lg
+    text-center justify-center rounded-md
     border border-accent-9 items-center
     text-lg font-semibold;
 }
 
 .root:hover {
-  @apply bg-accent-0 text-accent-9;
+  @apply outline outline-accent-9 outline-offset-2;
 }
 
 .root:focus,
 .root:active {
-  @apply shadow-outline-normal outline-none;
 }
 
 .root[data-active] {

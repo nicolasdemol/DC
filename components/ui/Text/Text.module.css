@@ -1,21 +1,21 @@
 .body {
-  @apply text-base leading-5 max-w-6xl mx-auto;
+  @apply mt-4 text-xl leading-8 text-accent-7 mb-1 lg:max-w-4xl;
 }
 
 .heading {
-  @apply text-6xl pt-1 pb-2 font-semibold tracking-wide cursor-pointer mb-2;
+  @apply text-5xl lg:text-7xl pt-1 pb-2 font-extrabold tracking-wide cursor-pointer mb-2;
 }
 
 .pageHeading {
-  @apply pt-1 pb-4 text-4xl leading-7 font-semibold tracking-wide;
+  @apply pt-1 pb-4 lg:text-6xl cursor-pointer font-extrabold text-5xl tracking-tight ;
 }
 
 .sectionHeading {
-  @apply pt-1 pb-2 text-2xl font-semibold cursor-pointer mb-2;
+  @apply pt-1 pb-2 text-2xl lg:text-3xl font-semibold cursor-pointer mb-2;
 }
 
 .subsectionHeading {
-  @apply pt-1 pb-1 font-bold cursor-pointer;
+  @apply pt-1 text-xl lg:text-2xl pb-1 font-extrabold cursor-pointer;
 }
 
 /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.).

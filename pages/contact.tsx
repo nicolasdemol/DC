@@ -10,19 +10,30 @@ export default function Contact() {
     },
   })
   return (
-    <Container className="mt-4 mb-10 md:mt-24">
-      <Text className="text-center" variant="pageHeading">
-        Réaliser votre projet
-      </Text>
-      <Text className="mt-4 text-center">
+    <Container className="mt-4 mb-10 md:mt-12">
+      <Text variant="heading">Réaliser votre projet</Text>
+      <Text className="mt-4">
         Ce formulaire nous permettra de comprendre vos enjeux et envisager des
-        solutions à votre projet.
-        <br /> Nous vous invitons à renseigner votre{' '}
+        solutions à votre projet. Nous vous invitons à renseigner votre{' '}
         <span className="font-semibold">adresse email</span>, afin que nous
         puissions vous contacter.
       </Text>
-      <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <Grid className="mt-10 font-semibold" variant="filled" layout="normal">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:w-2/3">
+        <Input
+          {...register('email', { required: true })}
+          label="email"
+          placeholder="Email"
+        />
+        <Button type="submit">Envoyer</Button>
+      </div>
+      <form
+        className="mt-8"
+        onSubmit={handleSubmit((data) => console.log(data))}
+      >
+        <Text variant="sectionHeading">
+          Sélectionner les services correspondant à votre projet
+        </Text>
+        <Grid variant="filled" layout="normal">
           <Checkbox
             {...register('checkbox')}
             value="application"
@@ -54,16 +65,6 @@ export default function Contact() {
             label="Intelligence Artificielle"
           />
         </Grid>
-        <div className="mt-12 mx-auto grid gap-4 md:grid-cols-2 lg:w-1/2">
-          <Input
-            {...register('email', { required: true })}
-            label="email"
-            placeholder="Email"
-          />
-          <Button type="submit" variant="slide">
-            Envoyer
-          </Button>
-        </div>
       </form>
     </Container>
   )

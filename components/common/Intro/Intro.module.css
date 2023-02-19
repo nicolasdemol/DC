@@ -1,12 +1,12 @@
 .root {
-  @apply flex h-full lg:h-screen lg:-mt-20 justify-center items-center;
+  @apply flex my-20 lg:h-screen lg:-mt-20 justify-center items-center;
 }
 
 .list {
   @apply grid grid-cols-1 mx-10 gap-20;
 }
 .circle {
-  @apply h-full w-full overflow-hidden top-0 left-0 fixed rounded-full;
+  @apply h-full w-full overflow-hidden top-0 left-0 fixed rounded-full hidden lg:block;
 }
 
 .bar {

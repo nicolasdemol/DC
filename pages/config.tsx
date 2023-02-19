@@ -8,6 +8,7 @@ import {
   IoBrushOutline as Brush,
   IoWalletOutline as Wallet,
   IoKeyOutline as Key,
+  IoLogOut,
 } from 'react-icons/io5'
 import { Appearance, ChangePassword, PublicProfil } from '@components/config'
 import { useAuth } from '@lib/hooks/useAuth'
@@ -24,11 +25,9 @@ const TABS = [
 ]
 
 export default function Config() {
-  const { user } = useAuth()
-
   return (
     <Container className="pt-4">
-      <UserInfos user={user} />
+      <UserInfos />
       <SideTab tabs={TABS} defaultTab={TABS[0]} />
     </Container>
   )
@@ -58,7 +57,8 @@ export async function getStaticProps() {
   return { props: { categories }, revalidate: 60 }
 }
 
-const UserInfos = ({ user }) => {
+const UserInfos = () => {
+  const { user, signout } = useAuth()
   return (
     <div className="flex flex-col md:flex-row w-full justify-between">
       <div className="flex items-center">
@@ -69,8 +69,10 @@ const UserInfos = ({ user }) => {
         </div>
       </div>
       <div className="flex items-center mt-2">
-        <Link href="/profil">
-          <Button variant="slim">Retour au profil</Button>
+        <Link href="/">
+          <Button onClick={signout} variant="slim">
+            Déconnexion
+          </Button>
         </Link>
       </div>
     </div>

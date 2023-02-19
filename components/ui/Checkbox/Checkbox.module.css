@@ -1,6 +1,6 @@
 .root {
-  @apply relative flex bg-accent-1 border text-accent-9 cursor-pointer tracking-wide
-      text-center justify-center rounded-lg items-center text-lg;
+  @apply relative flex bg-accent-0 border text-accent-9 cursor-pointer tracking-wide
+      text-center justify-center rounded-md items-center text-lg font-medium;
   min-height: 64px;
   input[type='checkbox'] {
     clip: rect(0 0 0 0);
@@ -11,6 +11,10 @@
     white-space: nowrap;
     width: 1px;
   }
+}
+
+.root:hover {
+  @apply outline outline-offset-2 outline-accent-9
 }
 
 .check {

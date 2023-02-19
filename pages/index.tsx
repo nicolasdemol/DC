@@ -5,19 +5,19 @@ export async function getStaticProps() {
   const categories = [
     {
       id: 'account',
-      name: 'Mon Profil',
+      name: 'Profil',
       slug: 'account',
       path: '/account',
     },
     {
       id: 'contracts',
-      name: 'Mes Contrats',
+      name: 'Contrats',
       slug: 'contracts',
       path: '/contracts',
     },
     {
       id: 'config',
-      name: 'Mes Paramètres',
+      name: 'Paramètres',
       slug: 'config',
       path: '/config',
     },

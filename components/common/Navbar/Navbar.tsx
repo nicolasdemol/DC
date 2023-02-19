@@ -16,19 +16,19 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ links }) => (
   <NavbarRoot>
-    <Container clean className="mx-auto max-w-7xl px-6">
-      <div className={s.nav}>
-        <nav className={s.navMenu}>
-          <Link href="/search">
+    <Container clean className="mx-auto max-w-8xl px-6">
+      <nav className={s.nav}>
+        <div className={s.navMenu}>
+          <Link href="/products">
             <a className={s.link}>Produits</a>
           </Link>
-          <Link href="/search">
+          <Link href="/services">
             <a className={s.link}>Services</a>
           </Link>
           <Link href="/contact">
             <a className={s.link}>Contact</a>
           </Link>
-        </nav>
+        </div>
         <Link href="/">
           <a className={s.logo} aria-label="Logo">
             <Logo />
@@ -38,7 +38,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
           <SearchBar className="hidden lg:block" />
           <UserNav />
         </div>
-      </div>
+      </nav>
     </Container>
   </NavbarRoot>
 )

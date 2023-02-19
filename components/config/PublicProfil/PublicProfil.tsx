@@ -59,7 +59,7 @@ const PublicProfil = () => {
               htmlFor="file"
             >
               <div className="pointer-events-none absolute bottom-4 z-10">
-                <div className="bg-accent-9 flex items-center px-2 py-1 text-accent-0 rounded-lg">
+                <div className="bg-accent-9 flex items-center px-2 py-1 text-accent-0 rounded-md">
                   <Pencil size={20} className="" />
                   <span className="pl-1 font-semibold">Modifier</span>
                 </div>

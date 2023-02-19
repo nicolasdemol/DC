@@ -1,5 +1,5 @@
 .root {
-  @apply relative text-lg bg-accent-0 transition-colors duration-150 border border-accent-3 rounded-lg;
+  @apply relative font-semibold  bg-accent-0 transition-colors duration-150 border border-accent-9 rounded-lg;
 }
 
 .input {
@@ -7,7 +7,7 @@
 }
 
 .input:focus {
-  @apply outline-none shadow-outline-normal;
+  @apply outline-2 outline-accent-9;
 }
 
 .input::placeholder {

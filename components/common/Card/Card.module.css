@@ -1,0 +1,37 @@
+.root {
+  @apply transition-all duration-700 cursor-pointer shadow-lg text-white;
+  height: 379px;
+  width: 300px;
+  background: grey;
+  border-radius: 10px;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: 300px !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.root:hover {
+  background-position: left center;
+  background-size: 600px !important;
+}
+
+.border {
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  position: relative;
+}
+
+.border:hover {
+  border: 1px solid white;
+}
+
+.title {
+  margin: 20px;
+}

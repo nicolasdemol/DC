@@ -3,5 +3,5 @@
 }
 
 .item {
-  @apply text-4xl font-bold py-2;
+  @apply font-medium text-xl tracking-widest uppercase py-2 flex items-center justify-between;
 }

@@ -3,18 +3,10 @@
 }
 
 .header {
-  @apply sticky top-0 pl-4 py-4 pr-6
-  flex items-center justify-between 
-  bg-accent-0 box-border w-full z-10;
-  min-height: 66px;
+  @apply sticky top-0 pl-6 pr-4 flex justify-between items-center bg-accent-0 border-b mb-4 box-border w-full z-10;
+  min-height: 70px;
 }
 
 .container {
   @apply flex flex-col flex-1 box-border;
-}
-
-@screen lg {
-  .header {
-    min-height: 74px;
-  }
 }
