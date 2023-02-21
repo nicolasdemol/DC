@@ -14,7 +14,7 @@
 }
 
 .root:hover {
-  @apply outline outline-offset-2 outline-accent-9
+  @apply outline outline-2 outline-offset-2 outline-accent-9
 }
 
 .check {

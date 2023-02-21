@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ title, description, bg, className }) => {
         backgroundImage: `url(${bg})`,
       }}
     >
-      <div className={s.border}>
+      <div>
         <Text variant="subsectionHeading" className={s.title}>
           {title}
         </Text>
