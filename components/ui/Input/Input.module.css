@@ -1,15 +1,15 @@
 .root {
-  @apply bg-primary w-full py-3 px-4 appearance-none transition duration-150 ease-in-out border border-accent-9 rounded-lg text-accent-9 text-lg;
+    @apply bg-primary w-full py-3 px-4 appearance-none transition duration-150 ease-in-out border border-accent-9 rounded-lg text-accent-9 text-lg;
 }
 
 .root:focus {
-  @apply outline-2 outline-accent-9;
+    @apply outline-2 outline-accent-9;
 }
 
 .slim {
-  @apply py-1 px-3 text-lg;
+    @apply py-1 px-3 text-lg;
 }
 
 * > .label {
-  @apply font-bold;
+    @apply font-bold;
 }

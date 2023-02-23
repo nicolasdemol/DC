@@ -1,22 +1,22 @@
 .root {
-  @apply relative flex bg-accent-0 border text-accent-9 cursor-pointer tracking-wide
+    @apply relative flex bg-accent-0 border text-accent-9 cursor-pointer tracking-wide
       text-center justify-center rounded-md items-center text-lg font-medium;
-  min-height: 64px;
-  input[type='checkbox'] {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
+    min-height: 64px;
+    input[type='checkbox'] {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
 }
 
 .root:hover {
-  @apply outline outline-2 outline-offset-2 outline-accent-9
+    @apply outline outline-2 outline-offset-2 outline-accent-9;
 }
 
 .check {
-  @apply bg-accent-9 text-accent-0;
+    @apply bg-accent-9 text-accent-0;
 }

@@ -1,23 +1,23 @@
 .root {
-  @apply relative font-semibold  bg-accent-0 transition-colors duration-150 border border-accent-9 rounded-lg;
+    @apply relative font-semibold  bg-accent-0 transition-colors duration-150 border border-accent-9 rounded-lg;
 }
 
 .input {
-  @apply bg-transparent w-48 pl-4 py-2 appearance-none transition duration-150 ease-in-out pr-10 rounded-lg;
+    @apply bg-transparent w-48 pl-4 py-2 appearance-none transition duration-150 ease-in-out pr-10 rounded-lg;
 }
 
 .input:focus {
-  @apply outline-2 outline-accent-9;
+    @apply outline-2 outline-accent-9;
 }
 
 .input::placeholder {
-  @apply text-accent-9;
+    @apply text-accent-9;
 }
 
 .iconContainer {
-  @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none;
+    @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none;
 }
 
 .icon {
-  @apply h-5 w-5;
+    @apply h-5 w-5;
 }

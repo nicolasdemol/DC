@@ -8,21 +8,21 @@ import { AuthProvider } from '@lib/hooks/useAuth'
 const Noop: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const Layout = (Component as any).Layout || Noop
+    const Layout = (Component as any).Layout || Noop
 
-  useEffect(() => {
-    document.body.classList?.remove('loading')
-  }, [])
+    useEffect(() => {
+        document.body.classList?.remove('loading')
+    }, [])
 
-  return (
-    <>
-      <ManagedUIContext>
-        <AuthProvider>
-          <Layout pageProps={pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-        </AuthProvider>
-      </ManagedUIContext>
-    </>
-  )
+    return (
+        <>
+            <ManagedUIContext>
+                <AuthProvider>
+                    <Layout pageProps={pageProps}>
+                        <Component {...pageProps} />
+                    </Layout>
+                </AuthProvider>
+            </ManagedUIContext>
+        </>
+    )
 }

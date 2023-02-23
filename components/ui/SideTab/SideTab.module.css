@@ -1,18 +1,18 @@
 .root {
-  @apply flex flex-col my-2;
+    @apply flex flex-col my-2;
 }
 
 .item {
-  @apply relative flex cursor-pointer rounded-md items-center pl-3;
+    @apply relative flex cursor-pointer rounded-md items-center pl-3;
 }
 
 .item:hover {
-  @apply bg-accent-1;
+    @apply bg-accent-1;
 }
 
 .active {
-  @apply bg-accent-9 text-accent-0 font-semibold;
-  &:hover {
-    @apply bg-accent-9;
-  }
+    @apply bg-accent-9 text-accent-0 font-semibold;
+    &:hover {
+        @apply bg-accent-9;
+    }
 }

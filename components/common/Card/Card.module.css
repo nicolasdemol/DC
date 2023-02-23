@@ -1,19 +1,19 @@
 .root {
-  @apply relative flex justify-center overflow-hidden rounded-xl cursor-pointer text-white;
-  transition: background 0.7s ease-in-out;
-  height: 379px;
-  width: 300px;
-  background-size: 300px !important;
-  background-repeat: no-repeat;
-  background-position: center center;
+    @apply relative flex justify-center overflow-hidden rounded-xl cursor-pointer text-white;
+    transition: background 0.7s ease-in-out;
+    height: 379px;
+    width: 300px;
+    background-size: 300px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .root:hover {
-  @apply outline outline-2 outline-accent-9 outline-offset-2;
-  background-position: left center;
-  background-size: 600px !important;
+    @apply outline outline-2 outline-accent-9 outline-offset-2;
+    background-position: left center;
+    background-size: 600px !important;
 }
 
 .title {
-  @apply mt-4
+    @apply mt-4;
 }

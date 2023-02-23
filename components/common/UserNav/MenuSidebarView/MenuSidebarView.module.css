@@ -1,7 +1,7 @@
 .root {
-  @apply px-4 sm:px-6 sm:w-full flex-1 z-20;
+    @apply px-4 sm:px-6 sm:w-full flex-1 z-20;
 }
 
 .item {
-  @apply font-medium text-xl tracking-widest uppercase py-2 flex items-center justify-between;
+    @apply font-medium text-xl tracking-widest uppercase py-2 flex items-center justify-between;
 }

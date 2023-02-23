@@ -1,79 +1,79 @@
 .body {
-  @apply mt-4 text-xl leading-8 mb-1 lg:max-w-4xl;
+    @apply mt-4 text-xl leading-8 mb-1 lg:max-w-4xl;
 }
 
 .heading {
-  @apply text-5xl lg:text-7xl pt-1 pb-2 font-extrabold tracking-wide cursor-pointer mb-2;
+    @apply text-5xl lg:text-7xl pt-1 pb-2 font-extrabold tracking-wide cursor-pointer mb-2;
 }
 
 .pageHeading {
-  @apply pt-1 pb-4 lg:text-6xl cursor-pointer font-extrabold text-5xl tracking-tight ;
+    @apply pt-1 pb-4 lg:text-6xl cursor-pointer font-extrabold text-5xl tracking-tight;
 }
 
 .sectionHeading {
-  @apply pt-1 pb-2 text-2xl lg:text-3xl font-semibold cursor-pointer mb-2;
+    @apply pt-1 pb-2 text-2xl lg:text-3xl font-semibold cursor-pointer mb-2;
 }
 
 .subsectionHeading {
-  @apply pt-1 text-xl lg:text-2xl pb-1 font-extrabold cursor-pointer;
+    @apply pt-1 text-xl lg:text-2xl pb-1 font-extrabold cursor-pointer;
 }
 
 /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.).
      A helpful addition for whenn page content is consumed from a source managed through a wysiwyg editor. */
 
 .body :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
-  @apply mb-4;
+    @apply mb-4;
 }
 
 .body :is(h1, h2, h3, h4, h5, h6):not(:first-child) {
-  @apply mt-8;
+    @apply mt-8;
 }
 
 .body :is(h1, h2, h3, h4, h5, h6) {
-  @apply font-semibold tracking-wide;
+    @apply font-semibold tracking-wide;
 }
 
 .body h1 {
-  @apply text-5xl;
+    @apply text-5xl;
 }
 
 .body h2 {
-  @apply text-4xl;
+    @apply text-4xl;
 }
 
 .body h3 {
-  @apply text-3xl;
+    @apply text-3xl;
 }
 
 .body h4 {
-  @apply text-2xl;
+    @apply text-2xl;
 }
 
 .body h5 {
-  @apply text-xl;
+    @apply text-xl;
 }
 
 .body h6 {
-  @apply text-lg;
+    @apply text-lg;
 }
 
 .body ul,
 .body ol {
-  @apply pl-6;
+    @apply pl-6;
 }
 
 .body ul {
-  @apply list-disc;
+    @apply list-disc;
 }
 
 .body ol {
-  @apply list-decimal;
+    @apply list-decimal;
 }
 
 .body a {
-  @apply underline;
+    @apply underline;
 }
 
 .body a:hover {
-  @apply no-underline;
+    @apply no-underline;
 }

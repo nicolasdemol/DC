@@ -1,5 +1,5 @@
 .root {
-  @apply bg-accent-9 text-accent-0 cursor-pointer 
+    @apply bg-accent-9 text-accent-0 cursor-pointer 
     px-4 py-3 transition ease-in-out duration-150
     text-center justify-center rounded-md
     border border-accent-9 items-center
@@ -7,7 +7,7 @@
 }
 
 .root:hover {
-  @apply outline outline-accent-9 outline-2 outline-offset-2 rounded-md;
+    @apply outline outline-accent-9 outline-2 outline-offset-2 rounded-md;
 }
 
 .root:focus,
@@ -15,42 +15,42 @@
 }
 
 .root[data-active] {
-  @apply bg-accent-6;
+    @apply bg-accent-6;
 }
 
 .loading {
-  @apply cursor-not-allowed;
+    @apply cursor-not-allowed;
 }
 
 .slim {
-  @apply px-4 py-1;
+    @apply px-4 py-1;
 }
 
 .medium {
-  @apply px-4 py-2;
+    @apply px-4 py-2;
 }
 
 .slide {
-  @apply relative bg-accent-0 overflow-hidden z-20 after:transition-all after:ease-in-out 
+    @apply relative bg-accent-0 overflow-hidden z-20 after:transition-all after:ease-in-out 
   after:duration-300 after:content-[''] after:bg-accent-9 after:absolute
   after:h-full after:w-full after:top-0 after:left-0 after:-z-10;
 }
 
 .slide:hover {
-  @apply after:-translate-y-full;
+    @apply after:-translate-y-full;
 }
 
 .naked {
-  @apply bg-accent-0 p-2 border-none text-accent-9;
+    @apply bg-accent-0 p-2 border-none text-accent-9;
 }
 
 .disabled,
 .disabled:hover {
-  @apply text-accent-4 border-accent-2 bg-accent-1 cursor-not-allowed;
-  filter: grayscale(1);
-  -webkit-transform: translateZ(0);
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
+    @apply text-accent-4 border-accent-2 bg-accent-1 cursor-not-allowed;
+    filter: grayscale(1);
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 }
 
 .progress {

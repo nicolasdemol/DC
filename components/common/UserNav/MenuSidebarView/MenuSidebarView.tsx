@@ -6,34 +6,34 @@ import type { Link as LinkProps } from './index'
 import { IoChevronForward } from 'react-icons/io5'
 
 export default function MenuSidebarView({
-  links = [],
+    links = [],
 }: {
-  links?: LinkProps[]
+    links?: LinkProps[]
 }) {
-  const { closeSidebar } = useUI()
+    const { closeSidebar } = useUI()
 
-  return (
-    <SidebarLayout handleClose={() => closeSidebar()}>
-      <div className={s.root}>
-        <nav>
-          <ul>
-            {links.map((l: any) => (
-              <li
-                key={l.href}
-                className={s.item}
-                onClick={() => closeSidebar()}
-              >
-                <Link href={l.href}>
-                  <a>{l.label}</a>
-                </Link>
-                <IoChevronForward />
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </SidebarLayout>
-  )
+    return (
+        <SidebarLayout handleClose={() => closeSidebar()}>
+            <div className={s.root}>
+                <nav>
+                    <ul>
+                        {links.map((l: any) => (
+                            <li
+                                key={l.href}
+                                className={s.item}
+                                onClick={() => closeSidebar()}
+                            >
+                                <Link href={l.href}>
+                                    <a>{l.label}</a>
+                                </Link>
+                                <IoChevronForward />
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+        </SidebarLayout>
+    )
 }
 
 MenuSidebarView

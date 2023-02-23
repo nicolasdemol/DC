@@ -1,36 +1,36 @@
 .root {
-  @apply sticky w-full top-0 bg-primary z-40 transition-all duration-150;
+    @apply sticky w-full top-0 bg-primary z-40 transition-all duration-150;
 }
 
 .nav {
-  @apply grid grid-cols-2 lg:grid-cols-3 items-center;
-  height: 70px;
+    @apply grid grid-cols-2 lg:grid-cols-3 items-center;
+    height: 70px;
 }
 
 .navMenu {
-  @apply hidden lg:flex space-x-6 
+    @apply hidden lg:flex space-x-6;
 }
 
 .link {
-  @apply tracking-widest uppercase text-sm font-semibold cursor-pointer border-2 border-transparent rounded-md p-1;
+    @apply tracking-widest uppercase text-sm font-semibold cursor-pointer border-2 border-transparent rounded-md p-1;
 }
 
 .link:hover {
-  @apply border-accent-9;
+    @apply border-accent-9;
 }
 
 .link:focus {
-  @apply outline-none;
+    @apply outline-none;
 }
 
 .logo {
-  @apply lg:justify-self-center cursor-pointer transform duration-300 ease-in-out;
+    @apply lg:justify-self-center cursor-pointer transform duration-300 ease-in-out;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .user {
-  @apply flex items-center justify-self-end space-x-6;
+    @apply flex items-center justify-self-end space-x-6;
 }
