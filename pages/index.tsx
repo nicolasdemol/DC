@@ -28,6 +28,13 @@ export async function getStaticProps() {
 export default function Home() {
   return (
     <>
+      <div className="w-full inset-0 overflow-hidden">
+        <iframe
+          className="w-full"
+          style={{ height: '56.25vw' }}
+          src="https://player.vimeo.com/video/774795708?background=1"
+        />
+      </div>
       <Intro />
       <Hero
         headline="Agence web experte en développement JavaScript"

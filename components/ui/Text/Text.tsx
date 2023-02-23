@@ -1,4 +1,5 @@
 import React, {
+  forwardRef,
   FunctionComponent,
   JSXElementConstructor,
   CSSProperties,

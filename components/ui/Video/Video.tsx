@@ -4,7 +4,7 @@ import s from './Video.module.css'
 import { mergeRefs } from 'react-merge-refs'
 
 interface VideoProps {
-  id: string
+  src: string
   children?: any
   className?: string
   Component?: string | JSXElementConstructor<any>
@@ -12,15 +12,14 @@ interface VideoProps {
 
 const Video: FC<VideoProps> = forwardRef((props, videoRef) => {
   Video.displayName = 'Video'
-  const { id, className, children, Component = 'video', ...rest } = props
+  const { src, className, children, Component = 'video', ...rest } = props
 
   const ref = useRef<typeof Component>(null)
   return (
     <Component
-      id={id}
       className={cn(s.root, className)}
       ref={mergeRefs([ref, videoRef])}
-      src={`https://cdn.jsdelivr.net/gh/nicolasdemol/DC@latest/videos/${id}.mp4`}
+      src={src}
       preload="auto"
       autoPlay
       muted

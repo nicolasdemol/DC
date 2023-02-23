@@ -3,7 +3,7 @@
 }
 
 .description {
-  @apply mt-4 text-xl leading-8 text-accent-7 mb-1 lg:max-w-4xl;
+  @apply mt-4 mb-1 lg:max-w-4xl;
 }
 
 @screen lg {
@@ -11,16 +11,10 @@
     @apply flex-row items-start justify-center py-32;
   }
   .title {
-    @apply max-w-xl text-right leading-10 -mt-3;
-    line-height: 3.5rem;
+    @apply max-w-xl text-right -mt-3;
+    line-height: 4rem;
   }
   .description {
     @apply mt-0 ml-6;
-  }
-}
-
-@screen xl {
-  .title {
-    @apply text-6xl;
   }
 }

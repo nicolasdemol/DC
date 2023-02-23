@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { Container, Text } from '@components/ui'
-import { IoArrowForward } from 'react-icons/io5'
 import s from './Hero.module.css'
 import Link from 'next/link'
 interface HeroProps {
@@ -11,7 +10,7 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ headline, description }) => {
   return (
-    <div className="bg-accent-1 border-y ">
+    <div className="bg-accent-0">
       <Container>
         <div className={s.root}>
           <Text className={s.title} variant="pageHeading">
@@ -20,10 +19,7 @@ const Hero: FC<HeroProps> = ({ headline, description }) => {
           <div className={s.description}>
             <Text variant="body">{description}</Text>
             <Link href="/services">
-              <a className="flex items-center text-accent-9 pt-3 font-bold hover:underline cursor-pointer w-max-content">
-                En savoir plus
-                <IoArrowForward width="20" height="20" className="ml-1" />
-              </a>
+              <Text className="items-center font-bold">En savoir plus</Text>
             </Link>
           </div>
         </div>

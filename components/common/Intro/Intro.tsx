@@ -2,8 +2,9 @@ import React, { FC, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useMousePosition } from '@lib/hooks/useMousePosition'
 import s from './Intro.module.css'
-import { Container, Video, Text, Logo } from '@components/ui'
+import { Video } from '@components/ui'
 import Link from 'next/link'
+import cn from 'clsx'
 
 const ITEMS = [
   {
@@ -65,7 +66,11 @@ const Intro: FC = () => {
           animate={video ? 'active' : 'inactive'}
         >
           {ITEMS.map(({ id }) => (
-            <Video key={id} className={video == id ? '' : 'hidden'} id={id} />
+            <Video
+              key={id}
+              className={cn({ hidden: video != id }, 'scale-150')}
+              src={`https://cdn.jsdelivr.net/gh/nicolasdemol/DC@latest/videos/${id}.mp4`}
+            />
           ))}
         </motion.div>
       </div>

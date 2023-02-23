@@ -1,12 +1,11 @@
 .root {
-  @apply flex my-20 lg:h-screen lg:-mt-20 justify-center items-center;
+  @apply flex py-24 lg:-mt-20 justify-center items-center overflow-hidden;
 }
-
 .list {
   @apply grid grid-cols-1 mx-10 gap-20;
 }
 .circle {
-  @apply h-full w-full overflow-hidden top-0 left-0 fixed rounded-full hidden lg:block;
+  @apply h-full w-full overflow-hidden top-0 left-0 scale-150 fixed hidden lg:block rounded-full;
 }
 
 .bar {
@@ -19,11 +18,13 @@
 }
 
 .title {
-  @apply font-extrabold text-transparent text-7xl transition duration-300 z-10;
-  -webkit-text-stroke: 2px var(--accent-9);
+  @apply font-extrabold text-accent-9 text-7xl transition duration-300 z-10;
 }
 
 @screen lg {
+  .root {
+    @apply pt-56
+  }
   .title {
     @apply text-8xl;
   }
